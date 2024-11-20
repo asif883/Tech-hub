@@ -3,13 +3,15 @@ import SectionTitle from '../SharedItems/SectionTitle';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
+import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
+
 import img1 from '../assets/F1.webp'
 import img5 from '../assets/F5.jpg'
 import img3 from '../assets/F3.webp'
 import img4 from '../assets/F4.webp'
 
-import { Pagination } from 'swiper/modules';
+import { FreeMode, Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 
@@ -23,14 +25,14 @@ const FeaturedProduct = () => {
 
             <div>
             <Swiper
-                slidesPerView={4}
-                spaceBetween={30}
-                centeredSlides={true}
-                pagination={{
-                clickable: true,
-                }}
-                modules={[Pagination]}
-                className="mySwiper"
+                 slidesPerView={3}
+                 spaceBetween={30}
+                 freeMode={true}
+                 pagination={{
+                   clickable: true,
+                 }}
+                 modules={[FreeMode, Pagination]}
+                className="mySwiper "
             >
                 <SwiperSlide className='rounded-md border border-gray-300'>
                     <img src={img1} alt="" />
@@ -64,7 +66,7 @@ const FeaturedProduct = () => {
             </div>
             <div className='flex items-center justify-center mt-6'>
                 <Link to='/product'>
-                            <button className='flex items-center gap-1 p-3 hover:bg-black hover:text-gray-100 border border-gray-600 rounded-md mt-4 '><>Explore More</> <MdKeyboardDoubleArrowRight size={20}/></button>
+                            <button className='flex items-center gap-1 p-3 hover:bg-[#FFA43A] text-[#FFA43A] font-semibold hover:text-white border-2 border-orange-300 rounded-md mt-4 '><>Explore More</> <MdKeyboardDoubleArrowRight size={20}/></button>
                 </Link>
             </div>
         </div>
