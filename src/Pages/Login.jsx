@@ -5,16 +5,24 @@ import { Link } from 'react-router-dom';
 
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
+import useAuth from '../Hooks/useAuth';
 
 const Login = () => {
-    const {
+    const { login} = useAuth()
+     const {
         register, 
         handleSubmit,
         formState: {errors}
     } =useForm()
 
     const handleLogin = (data)=>{
-        
+        const email = data.email;
+        const password = data.password
+
+        login( email, password) 
+        .then ( res =>{
+            console.log(res);         
+        })
     }  
 
     const handleGoogleLogin = ()=>{
@@ -50,25 +58,29 @@ const Login = () => {
                       <span className=" label-text text-xl font-semibold">Password</span>
                   </label>
                 
-                 <input type="password"
-                      name='password' 
-                      placeholder="password" 
-                      className= "input input-bordered border border-orange-300" {...register("password", 
-                        {
-                          required: true,
-                          minLength:6
-                        })} />
-                        {
-                            errors.password?.type ==="required" &&(
-                                <p className='text-red-500 text-sm font-light'>Password is required</p>
-                            )
-                        }
-                        {
-                            errors.password?.type ==="minLength" &&(
-                                <p className='text-red-500 text-sm font-light'>Password must be have six characters</p>
-                            )
-                        }
-                
+                  <input
+                        type="password"
+                        placeholder="Enter your password"
+                        className= "input input-bordered border border-orange-300"
+                        {...register("password", {
+                        required: "Password is required.",
+                        minLength: {
+                            value: 8,
+                            message: "Password must be at least 8 characters long.",
+                        },
+                        pattern: {
+                            value: /(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])/,
+                            message:
+                            "Password must include uppercase, lowercase, a number, and a special character.",
+                        },
+                        })}
+                        
+                    />
+                    {
+                    errors.password && <p className='text-red-500'>{
+                        errors.password.message
+                    }</p>
+                    }
                       
                  
                   </div>

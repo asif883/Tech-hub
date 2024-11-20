@@ -1,15 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
+
+import img from '../../assets/profile.webp'
 
 const NavEnd = () => {
+
+    const { user ,logout} = useAuth()
+
+    const handleLogout= () =>{
+        logout()
+    }
+
     return (
         <div>
-            <Link to='/login'>
-                  <button className='border-2 border-[#FFA43A] rounded-xl mr-3 text-[#FFA43A] px-3 py-2 font-semibold'>Login</button>
-            </Link>
-            <Link to='/register'>
-                  <button className='border-2 border-[#FFA43A] rounded-xl mr-3 text-[#FFA43A] px-3 py-2 font-semibold'>Register</button>
-            </Link>
+            {
+                user 
+                ? 
+                <div>
+                     <div className="dropdown dropdown-left dropdown-end">
+                        <div tabIndex={0} role="button" className="border-2 border-orange-200 rounded-full">
+                            <img className='w-10 rounded-full p-1' src={img} alt="" />
+                        </div>
+                         <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                       
+                        <li>
+                            <button onClick={handleLogout}>Logout</button>
+                        </li>
+                     </ul>
+                 </div>
+                </div> 
+                : 
+                <div>
+                <Link to='/login'>
+                    <button className='border-2 border-[#FFA43A] rounded-xl mr-3 text-[#FFA43A] px-3 py-2 font-semibold'>Login</button>
+                </Link>
+                <Link to='/register'>
+                        <button className='border-2 border-[#FFA43A] rounded-xl mr-3 text-[#FFA43A] px-3 py-2 font-semibold'>Register</button>
+                </Link>
+                </div>
+            }
         </div>
     );
 };
