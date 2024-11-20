@@ -1,44 +1,60 @@
-import React from 'react';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import 'swiper/css';
-import 'swiper/css/pagination';
-
-import { Pagination } from 'swiper/modules';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import banner1 from '../assets/Banner1.jpg'
 import banner3 from '../assets/Banner3.avif'
-import { Link } from 'react-router-dom';
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import banner2 from '../assets/b.jpg'
+
 
 const Banner = () => {
     return (
         <div>
         <Swiper
-        pagination={{
-          dynamicBullets: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper h-[400px] lg:h-[750px]"
-        >
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={30}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        className="h-[400px] lg:h-[650px]"
+      >
             <SwiperSlide>
-                <img className='w-full h-full' src={banner1} alt="" />
-                <div className='text-gray-400 absolute top-1/3 pl-8 lg:pl-16'>
-                    <p className='max-w-lg text-xl lg:text-2xl font-semibold'>Revolutionize Your Space with High-Fidelity sound and smart technology that adapts to your life style. </p>
-                    <Link to='/product'>
-                        <button className='flex items-center gap-1 p-3 hover:bg-gray-300 hover:text-gray-700 border border-gray-200 rounded-md mt-4 '><>Explore All Products</> <MdKeyboardDoubleArrowRight /></button>
-                    </Link>
-                </div>
+                <img className='absolute object-cover w-full h-full' src={banner1} alt="" />
+
+                <div className="relative top-1/3 text-white px-8 py-4 text-center rounded-md">
+                    <h1 className="text-3xl lg:text-5xl font-bold">Discover the Latest Gadgets</h1>
+                    <p className="mt-4 text-lg">Explore cutting-edge technology at Tech-Hub.</p>
+                    <button className="mt-6 px-6 py-2 bg-orange-500 hover:bg-orange-600 rounded text-white">
+                        Shop Now
+                    </button>
+                 </div>
+                
             </SwiperSlide>
             
             <SwiperSlide>
-                <img className='w-full h-full' src={banner3} alt="" />
-                <div className='text-gray-400 absolute top-1/3 pl-8 lg:pl-16'>
-                    <p className='max-w-lg text-xl lg:text-2xl font-semibold'>Revolutionize Your Space with High-Fidelity sound and smart technology that adapts to your life style. </p>
-                    <Link to='/product'>
-                        <button className='flex items-center gap-1 p-3 hover:bg-gray-300 hover:text-gray-700 border border-gray-200 rounded-md mt-6 '><>Explore All Products</> <MdKeyboardDoubleArrowRight size={20}/></button>
-                    </Link>
+                <img className='absolute object-cover w-full h-full' src={banner2} alt="" />
+
+                <div className="relative top-1/3 text-white px-8 py-4 text-center rounded-md">
+                    <h1 className="text-3xl lg:text-5xl font-bold">Upgrade Your Smart Home</h1>
+                    <p className="mt-4 text-lg">Innovative solutions to modernize your lifestyle.</p>
+                    <button className="mt-6 px-6 py-2 bg-orange-500 hover:bg-orange-600 rounded text-white">
+                        Shop Now
+                    </button>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <img className='absolute object-cover w-full h-full' src={banner3} alt="" />
+
+                <div className="relative top-1/3 text-white px-8 py-4 text-center rounded-md">
+                    <h1 className="text-3xl lg:text-5xl font-bold">Level Up Your Gaming Setup</h1>
+                    <p className="mt-4 text-lg">Premium gaming accessories for ultimate performance.</p>
+                    <button className="mt-6 px-6 py-2 bg-orange-500 hover:bg-orange-600 rounded text-white">
+                        Shop Now
+                    </button>
                 </div>
             </SwiperSlide>
            

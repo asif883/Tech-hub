@@ -5,6 +5,7 @@ import Testimonials from '../Components/Testimonials';
 import Faqs from '../Components/Faqs';
 import Contact from '../Components/Contact';
 
+
 const Home = () => {
     return (
         <div>

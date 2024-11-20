@@ -5,7 +5,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 const ContactPage = () => {
     return (
         <div>
-             <div className="bg-gray-100 text-gray-800">
+             <div className=" text-gray-800">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-orange-400">Contact Us</h1>
