@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { app } from "../Firebase/FirebaseConfig";
+import axios from "axios";
 
 
 export const AuthContext = createContext(null)
@@ -15,7 +16,23 @@ const Context = ({children}) => {
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged( auth , currentUser=>{
             setUser(currentUser)
-        })
+        
+        if(currentUser){
+            axios.post('http://localhost:4000/authentication',{email: currentUser?.email})
+            .then(data=>{
+                if(data.data){
+                    localStorage.setItem('access-token', data?.data?.token)
+                    setLoading(false)
+                }
+            })
+        }
+        else{
+            localStorage.removeItem('access-token')
+            setLoading(false)
+        }
+
+    })
+
         return ()=>{
             unsubscribe()
         }
@@ -40,6 +57,7 @@ const Context = ({children}) => {
 
     const authInfo ={
         user,
+        loading,
         CreateUser,
         login,
         logout
