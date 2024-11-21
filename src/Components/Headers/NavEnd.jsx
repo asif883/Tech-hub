@@ -8,9 +8,7 @@ const NavEnd = () => {
 
     const { user ,logout} = useAuth()
 
-    const handleLogout= () =>{
-        logout()
-    }
+    
 
     return (
         <div>
@@ -25,7 +23,8 @@ const NavEnd = () => {
                          <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
                        
                         <li>
-                            <button onClick={handleLogout}>Logout</button>
+                            <Link to='/dashboard'>Dashboard</Link>
+                            
                         </li>
                      </ul>
                  </div>
