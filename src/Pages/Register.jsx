@@ -1,11 +1,15 @@
 import { useForm } from 'react-hook-form';
 import img from '../assets/Sign up-rafiki.svg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useNavigation } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 
 const Register = () => {
     const { CreateUser } =useAuth()
+
+    const navigate = useNavigate()
 
     const {
         register, 
@@ -19,10 +23,39 @@ const Register = () => {
 
         const email = data.email
         const password = data.password
-        // console.log(email, password);
+        const role =data.role
+        const name = data.name
+        const status = role === 'buyer' ? "approved" : 'Pending'
+        const wishList =[]
+        const userInfo={
+            name, email, role, status, wishList
+        }
+        // console.log(userInfo);
+
         CreateUser( email, password )
-        .then( res =>{
-            console.log(res);
+        .then( ()=>{
+            axios.post('http://localhost:4000/user', userInfo)
+            .then((res)=>{
+                console.log(res.data);
+                if(res.data.insertedId){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Registration Successful',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                      }); 
+                }
+                navigate('/')
+            })
+            
+        }).catch (error =>{
+            console.error( error)
+            Swal.fire({
+                title: 'Error!',
+                text: `${error.message}`,
+                icon: 'error',
+                confirmButtonText: 'Try again'
+              })
         })
 
     }
@@ -117,7 +150,7 @@ const Register = () => {
                         }           
                     </div>
 
-                    {/* <div className="form-control">
+                    <div className="form-control">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Role</span>
                         </label>
@@ -132,7 +165,7 @@ const Register = () => {
                                     <p className='text-red-500 text-sm font-light'>You have to select a role</p>
                                 )
                             }
-                    </div> */}
+                    </div>
                     
                     <div className="form-control mt-6">
                     <button type='submit' className=" w-full border-2 mr-4  px-4  rounded-lg py-3 bg-[#FFA43A] text-white  font-semibold">Register</button>
