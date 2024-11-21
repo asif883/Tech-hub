@@ -1,14 +1,18 @@
 import React from 'react';
 import img from '../assets/Login-cuate.svg'
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 import useAuth from '../Hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const { login} = useAuth()
+    const navigate = useNavigate()
+    const location = useLocation()
+    
      const {
         register, 
         handleSubmit,
@@ -20,8 +24,27 @@ const Login = () => {
         const password = data.password
 
         login( email, password) 
-        .then ( res =>{
-            console.log(res);         
+        .then(res =>{
+            console.log(res);
+            Swal.fire({
+                title: 'Success!',
+                text: 'Login Successful',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+              });
+              navigate(location?.state ? location.state : '/');
+        })
+        
+
+        .catch (error =>{
+            console.error( error)
+
+            Swal.fire({
+                title: 'Error!',
+                text: `${error.message}`,
+                icon: 'error',
+                confirmButtonText: 'Try again'
+              })
         })
     }  
 
