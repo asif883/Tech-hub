@@ -59,8 +59,8 @@ const Sidebar = () => {
                 role === "admin" && 
                 <>
               {
-                AdminRoutes.map((r)=>
-                    <Link to={`${r.route}`} className='border-2 border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
+                AdminRoutes.map((r, idx)=>
+                    <Link to={`${r.route}`} key={idx} className='border-2 border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
                         <>{r.icon}</>
                         <>{r.name}</>
                     </Link>   
@@ -72,8 +72,9 @@ const Sidebar = () => {
                 role === "seller" && 
                 <>
               {
-                SellerRoutes.map((r)=>
-                    <Link to={`${r.route}`} className='border-2 border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
+                SellerRoutes.map((r, idx)=>
+                    <Link to={`${r.route}`
+                    } key={idx} className='border-2 border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
                         <>{r.icon}</>
                         <>{r.name}</>
                     </Link>   
