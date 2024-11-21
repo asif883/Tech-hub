@@ -4,6 +4,7 @@ import Loading from '../Components/Loading';
 import SearchBar from '../Components/Searchbar';
 import ProductCard from '../Components/ProductCard';
 import Sort from '../Components/Sort';
+import Filter from '../Components/Filter';
 
 
 const AllProduct = () => {
@@ -11,23 +12,30 @@ const AllProduct = () => {
     const [loading , setLoading] = useState(true)
     const [Search , setSearch] =useState('')
     const [sort , setSort] =useState('decs')
+    const [brand , setBrand] =useState('')
+    const [category , setCategory] =useState('')
+
+    const [ newBrand , setNewBrand] = useState([])
+    const [ newCategory , setNewCategory] = useState([])
 
     
      
     useEffect(()=>{
         setLoading(true)
         const fetch =async()=>{
-            axios.get(`http://localhost:4000/all-products?title=${Search}&sort=${sort}`)
+            axios.get(`http://localhost:4000/all-products?title=${Search}&sort=${sort}&brand=${brand}&category=${category}`)
             .then(res =>{
                 console.log(res.data);
                 setProduct(res.data.products)
+                setNewBrand(res.data.brands)
+                setNewCategory(res.data.categories)
                 setLoading(false)
             })
             
         }
        
         fetch()
-    },[Search , sort])
+    },[Search , sort, brand, category])
 
     const handleSearch = (e) =>{
         e.preventDefault()
@@ -51,7 +59,17 @@ const AllProduct = () => {
                 <SearchBar handleSearch={handleSearch}/>
                 <Sort setSort={setSort}></Sort>
             </div>
-            <button onClick={handleReset} className='p-3 border rounded-md border-orange-300  text-orange-400 mb-6'>Reset</button>
+            <div className='flex items-center justify-between mb-2'> 
+                 <button onClick={handleReset} className='p-3 border rounded-md border-orange-300  text-orange-400 mb-6'>Reset</button>
+                 <Filter 
+                 setBrand={setBrand}
+                 setCategory={setCategory}
+                 newBrand={newBrand}
+                 newCategory={newCategory}       
+                 />
+                
+            </div>
+            
             <div>
                 
                 <div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center bg-orange-50 text-base-content rounded p-10">
+        <footer className="footer footer-center bg-orange-50 text-base-content rounded p-10 mt-16">
                 <nav className="grid grid-flow-col gap-4">
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
@@ -47,7 +47,7 @@ const Footer = () => {
                     </div>
                 </nav>
                 <aside>
-                    <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+                    <p>Copyright © {new Date().getFullYear()} - All right reserved by Tech-Hub</p>
                 </aside>
         </footer>
     );
