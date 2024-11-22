@@ -2,7 +2,7 @@
 
 Tech-Hub is a modern e-commerce platform specializing in gadgets and technology products. Built to provide an intuitive and seamless shopping experience, Tech-Hub caters to tech enthusiasts with a wide range of high-quality products.
 
-## Live URL :https://tech-hub-7f6cd.web.app
+## Live URL : https://last-project-psi.vercel.app
 
 ## Features
 
