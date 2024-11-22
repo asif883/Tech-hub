@@ -18,7 +18,13 @@ const NavEnd = () => {
                 <div>
                      <div className="dropdown dropdown-left dropdown-end">
                         <div tabIndex={0} role="button" className="border-2 border-orange-200 rounded-full">
-                            <img className='w-10 rounded-full p-1' src={img} alt="" />
+                            {
+                                user?.photoURL 
+                                ?
+                                <><img className='w-10 rounded-full p-1' src={user?.photoURL} alt={user?.email} /></> 
+                                : 
+                                <><img className='w-10 rounded-full p-1' src={img} alt={user?.email} /></>
+                            }
                         </div>
                          <ul tabIndex={0} className="dropdown-content menu  rounded-box z-[1] p-2 shadow">
                        

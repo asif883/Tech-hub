@@ -21,7 +21,7 @@ const Overview = () => {
       <h1 className="text-3xl font-bold mb-6">Dashboard Overview</h1>
 
       {/* Stats Section */}
-      <div className="grid grid-cols-3 gap-4 mb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-10">
         <div className="p-6 bg-blue-200 rounded shadow">
           <h3 className="text-lg font-semibold">Total Users</h3>
           <p className="text-2xl font-bold">1,200</p>
@@ -50,7 +50,7 @@ const Overview = () => {
       {/* Recent Activity Section */}
       <div>
         <h2 className="text-2xl font-semibold mb-4">Recent Activity</h2>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div className="p-6 bg-pink-200 rounded shadow">
             <h3 className="text-lg font-semibold">Recent Added Products</h3>
             <ul className="mt-2 space-y-2">

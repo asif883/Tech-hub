@@ -60,7 +60,7 @@ const ProductCard = ({product}) => {
 
     return (
         <div >
-          <div className="card bg-base-100 border w-[320px] border-orange-300  shadow-xl">
+          <div className="card bg-base-100 border w-[320px] mx-auto border-orange-300  shadow-xl">
             <figure>
              <img className='h-[200px]'
                 src={product?.imageURL}

@@ -55,11 +55,11 @@ const AllProduct = () => {
             <div className='text-center my-8'>
                 <h1 className="text-3xl font-bold">ALL Product</h1>
             </div>
-            <div className='flex items-center justify-between mb-2'> 
+            <div className='flex gap-4 lg:gap-1 flex-col lg:flex-row items-center justify-between mb-2'> 
                 <SearchBar handleSearch={handleSearch}/>
                 <Sort setSort={setSort}></Sort>
             </div>
-            <div className='flex items-center justify-between mb-2'> 
+            <div className='flex  flex-col-reverse lg:flex-row items-center justify-between mb-2'> 
                  <button onClick={handleReset} className='p-3 border rounded-md border-orange-300  text-orange-400 mb-6'>Reset</button>
                  <Filter 
                  setBrand={setBrand}

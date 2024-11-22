@@ -32,7 +32,7 @@ const Categories = () => {
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 items-center">          
                {
                   categories?.map(( category , idx) =>
-                    <Link to='/product' key={idx} className="card w-72 border border-orange-300 shadow-xl">
+                    <Link to='/product' key={idx} className="card w-72 mx-auto border border-orange-300 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title">
                             {

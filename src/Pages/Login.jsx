@@ -7,9 +7,10 @@ import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 import useAuth from '../Hooks/useAuth';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const Login = () => {
-    const { login} = useAuth()
+    const {googleLogin , login} = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
     
@@ -49,7 +50,21 @@ const Login = () => {
     }  
 
     const handleGoogleLogin = ()=>{
-
+            googleLogin()
+            .then(res=>{            
+                const name = res?.user?.displayName
+                const email = res?.user?.email
+                const userInfo= {
+                    name,
+                    email,
+                    role : "buyer"
+                  }
+                    axios.post('http://localhost:4000/user',userInfo)
+                    .then((res)=>{
+                        
+                        navigate(location?.state ? location.state : '/'); 
+                    })
+            })
     }
     return (
         <div>
@@ -122,10 +137,6 @@ const Login = () => {
                       <button onClick={handleGoogleLogin} className="mr-3 border border-orange-300 p-1 rounded-xl">
                           <FcGoogle className="w-10 h-10" />
                       </button>
-                      <button className="mr-3 border border-orange-300  p-1 rounded-xl">
-                          <FaGithub className="w-10 h-10"/>
-                      </button>
-                     
                   </div>
                  </div>
             </div>
