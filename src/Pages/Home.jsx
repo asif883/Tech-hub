@@ -4,6 +4,7 @@ import FeaturedProduct from '../Components/FeaturedProduct';
 import Testimonials from '../Components/Testimonials';
 import Faqs from '../Components/Faqs';
 import Contact from '../Components/Contact';
+import Categories from '../Components/Categories';
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner/>
             <div className='container mx-auto'>
                 <FeaturedProduct/>
+                <Categories/>
                 <Faqs/>
                 <Contact/>
                 <Testimonials/>
