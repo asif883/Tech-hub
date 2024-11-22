@@ -20,9 +20,9 @@ const NavEnd = () => {
                         <div tabIndex={0} role="button" className="border-2 border-orange-200 rounded-full">
                             <img className='w-10 rounded-full p-1' src={img} alt="" />
                         </div>
-                         <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                         <ul tabIndex={0} className="dropdown-content menu  rounded-box z-[1] p-2 shadow">
                        
-                        <li>
+                        <li className='border rounded-xl border-orange-300 bg-orange-400 text-white'>
                             <Link to='/dashboard/dashboard/overview'>Dashboard</Link>
                             
                         </li>

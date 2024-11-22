@@ -14,6 +14,8 @@ import AllProduct from "../Pages/AllProducts";
 import ProductDetails from "../Pages/ProductDetails";
 import MyCart from "../Pages/Dashboard/MyCart";
 import WishList from "../Pages/Dashboard/WishList";
+import MyProduct from "../Pages/Dashboard/MyProduct";
+import UpdateProduct from "../Pages/Dashboard/UpdateProduct";
 
 export const router = createBrowserRouter([
     {
@@ -49,7 +51,8 @@ export const router = createBrowserRouter([
         {
           path: '/details/:id',
           element:<ProductDetails></ProductDetails>, 
-        }
+        },
+       
 
       ]
     },
@@ -76,6 +79,14 @@ export const router = createBrowserRouter([
         {
           path: 'dashboard/my-wishList',
           element:<PrivateRoute><WishList/></PrivateRoute>
+        },
+        {
+          path: 'dashboard/my-product',
+          element:<PrivateRoute><MyProduct/></PrivateRoute>
+        },
+        {
+          path:'/dashboard/updateProduct/:id',
+          element:<PrivateRoute><UpdateProduct/></PrivateRoute>
         }
         
       ]

@@ -34,28 +34,28 @@ const FeaturedProduct = () => {
                  modules={[FreeMode, Pagination]}
                 className="mySwiper "
             >
-                <SwiperSlide className='rounded-md border border-gray-300'>
+                <SwiperSlide className='rounded-md border  border-orange-300'>
                     <img src={img1} alt="" />
                     <div className='py-4 text-center'>
                        <p className='font-bold text-lg'>Sonos Ace</p>
                        <p className='font-bold text-xs' >Head phone</p>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className='rounded-md border border-gray-300'>
+                <SwiperSlide className='rounded-md border border-orange-300'>
                     <img className='h-full' src={img5} alt="" />
                     <div className='py-4 text-center'>
                        <p className='font-bold text-lg'>iTel iS7</p>
                        <p className='font-bold text-xs' >TWS</p>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className='rounded-md border border-gray-300'>
+                <SwiperSlide className='rounded-md border border-orange-300'>
                     <img src={img3} alt="" />
                     <div className='py-4 text-center'>
                        <p className='font-bold text-lg'>UG Green</p>
                        <p className='font-bold text-xs' >Tri pod</p>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className='rounded-md border border-gray-300'>
+                <SwiperSlide className='rounded-md border border-orange-300'>
                     <img src={img4} alt="" />
                     <div className='py-4 text-center'>
                        <p className='font-bold text-lg'>Apple Watch</p>
@@ -66,7 +66,7 @@ const FeaturedProduct = () => {
             </div>
             <div className='flex items-center justify-center mt-6'>
                 <Link to='/product'>
-                            <button className='flex items-center gap-1 p-3 hover:bg-[#FFA43A] text-[#FFA43A] font-semibold hover:text-white border-2 border-orange-300 rounded-md mt-4 '><>Explore More</> <MdKeyboardDoubleArrowRight size={20}/></button>
+                            <button className='flex items-center gap-1 p-3 hover:bg-orange-400 text-orange-400 font-semibold hover:text-white border-2 border-orange-300 rounded-md mt-4 '><>Explore More</> <MdKeyboardDoubleArrowRight size={20}/></button>
                 </Link>
             </div>
         </div>

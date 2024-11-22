@@ -83,7 +83,7 @@ const AllProduct = () => {
                                   <h1 className="text-2xl text-red-500 font-bold text-center min-h-screen flex items-center justify-center">No product found</h1>
                               </div>) :
 
-                              (<div className='grid gap-16 grid-cols-4'>
+                              (<div className='grid gap-6 lg:gap-16 grid-cols-1 lg:grid-cols-4'>
                          {
                             products.map((product, idx)=>
                             ( <ProductCard key={idx} product={product}></ProductCard>  ))

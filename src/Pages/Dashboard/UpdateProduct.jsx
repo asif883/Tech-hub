@@ -1,58 +1,47 @@
+import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import useUserData from '../../Hooks/useUserData';
+import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import axios from 'axios';
 
-const AddProduct = () => {
-    const {email} = useUserData()
+const UpdateProduct = () => {
+
+    const {id} =useParams()
 
     const {
-        register,
-        handleSubmit,
+        register, 
+        handleSubmit, 
         formState:{errors}
-    } = useForm()
+    }=useForm()
 
-    const handleAddProduct = (data) =>{
-        const title = data.title
-        const brand = data.brand
-        const price = parseFloat(data.price)
-        const inStock = parseFloat(data.stock)
-        const imageURL = data. imageURL
-        const category= data.category
-        const sellerEmail = email
-        const description = data.description
+  const handleUpdateProduct =(data)=>{
+    const title = data.title
+    const brand = data.brand
+    const price = parseFloat(data.price)
+    const inStock = parseFloat(data.stock)
+    const imageURL = data.imageURL
+    const category= data.category
+    const description = data.description
 
-        const productInfo ={title, brand, price, inStock, imageURL, category, sellerEmail, description}
-        
-        
-        const token = localStorage.getItem('access-token')
-
-        axios.post('http://localhost:4000/add-products', productInfo, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then(res =>{
-            console.log(res.data)
-            if(res.data.insertedId){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Product added Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
-                  }); 
-            }
-            window.location.reload()
-            
-        })
-
-    }
+    const UpdateProductInfo ={title, brand, price, inStock, imageURL, category, description}
+      axios.patch(`http://localhost:4000/updateProduct/${id}`, UpdateProductInfo)
+      .then(res =>{
+        if(res.data.modifiedCount > 0){
+            Swal.fire({
+                title: "Product updated Successfully!",
+                text: 'Updated',
+                icon: "success"
+              })
+        }
+    window.location.reload()  
+    })
+  }
     return (
-     <div> 
-        <div className='text-center my-8'>
-                <h1 className="text-3xl font-bold text-orange-400">Add A Product</h1>
+        <div> 
+             <div className='text-center my-8'>
+                <h1 className="text-3xl font-bold text-orange-400">Update You Product</h1>
             </div>
-      <form onSubmit={handleSubmit(handleAddProduct)}>
+      <form onSubmit={handleSubmit(handleUpdateProduct)}>
         <div className='flex items-center gap-3'>
           <div className="flex-1">
                     <label className="label ">
@@ -162,7 +151,7 @@ const AddProduct = () => {
                    
             </div>
 
-            <button type='submit' className='w-full border-2 mt-4  px-4  rounded-lg py-3 bg-[#FFA43A] text-white  font-semibold'>Add Product</button>
+            <button type='submit' className='w-full border-2 mt-4  px-4  rounded-lg py-3 bg-[#FFA43A] text-white  font-semibold'>Update Product</button>
           
            
       </form>
@@ -170,4 +159,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default UpdateProduct;

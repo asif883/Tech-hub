@@ -19,8 +19,26 @@ const ProductDetails = () => {
     const product = products.find((product)=> product._id == id);
     console.log(product);
     return (
-        <div>
-            <h1 className='text-3xl font-bold'>{product?.title}</h1>
+        <div className='container mx-auto my-12 min-h-screen'>
+            <div className="border-orange-200 card lg:card-side shadow-xl">
+                <figure>
+                    <img className='w-[320px]'
+                    src={product?.imageURL}
+                    alt={product?.title} />
+                </figure>
+                <div className="card-body">
+                    <h2 className="card-title text-2xl">{product?.title}</h2>
+                    <p>{product?.description}</p>
+                    <div>
+                        <p className='font-medium text-gray-600'>Brand: {product?.brand}</p>
+                        <p className='font-medium text-gray-600'>Price: ${product?.price}</p>
+                        <p className='font-medium text-gray-600'>Stock: {product?.inStock}</p>
+                    </div>
+                    <div className="card-actions justify-end">
+                    <button className="border-2 border-[#FFA43A] rounded-xl hover:text-orange-500 hover:border-orange-500  text-[#FFA43A] px-2 py-2 font-semibold">Buy Now</button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
