@@ -60,7 +60,7 @@ const MyProduct = () => {
                        <div key={i}>
                            <div className="border border-orange-200 card card-side  shadow-xl">
                                <figure>
-                                   <img className='w-[150px]'
+                                   <img className='w-[100px] lg:w-[150px]'
                                    src={item.imageURL}
                                    alt="product" />
                                </figure>

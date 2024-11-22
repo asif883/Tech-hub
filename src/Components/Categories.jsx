@@ -29,7 +29,7 @@ const Categories = () => {
                 subHeading="200+  unique products"
              ></SectionTitle>
 
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 items-center">          
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center">          
                {
                   categories?.map(( category , idx) =>
                     <Link to='/product' key={idx} className="card w-72 mx-auto border border-orange-300 shadow-xl">

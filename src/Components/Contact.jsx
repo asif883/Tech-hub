@@ -12,7 +12,7 @@ const Contact = () => {
             heading="Contact Our Friendly Team" 
             subHeading="Let us know how can we help you"
             />
-            <div className='flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center items-center mt-3 lg:mt-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 justify-center items-center mt-3 lg:mt-8'>
                  <div className="card w-80 border border-orange-300 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title"><BiMessageRoundedDots size={32}/></h2>

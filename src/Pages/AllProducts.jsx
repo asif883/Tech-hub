@@ -55,11 +55,11 @@ const AllProduct = () => {
             <div className='text-center my-8'>
                 <h1 className="text-3xl font-bold">ALL Product</h1>
             </div>
-            <div className='flex gap-4 lg:gap-1 flex-col lg:flex-row items-center justify-between mb-2'> 
+            <div className='flex gap-4 md:gap-1 flex-col md:flex-row items-center justify-between mb-2'> 
                 <SearchBar handleSearch={handleSearch}/>
                 <Sort setSort={setSort}></Sort>
             </div>
-            <div className='flex  flex-col-reverse lg:flex-row items-center justify-between mb-2'> 
+            <div className='flex  flex-col-reverse md:flex-row items-center justify-between mb-2'> 
                  <button onClick={handleReset} className='p-3 border rounded-md border-orange-300  text-orange-400 mb-6'>Reset</button>
                  <Filter 
                  setBrand={setBrand}
@@ -83,7 +83,7 @@ const AllProduct = () => {
                                   <h1 className="text-2xl text-red-500 font-bold text-center min-h-screen flex items-center justify-center">No product found</h1>
                               </div>) :
 
-                              (<div className='grid gap-6 lg:gap-16 grid-cols-1 lg:grid-cols-4'>
+                              (<div className='grid gap-6 md:gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
                          {
                             products.map((product, idx)=>
                             ( <ProductCard key={idx} product={product}></ProductCard>  ))
