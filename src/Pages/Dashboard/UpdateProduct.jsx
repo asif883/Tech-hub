@@ -24,7 +24,7 @@ const UpdateProduct = () => {
     const description = data.description
 
     const UpdateProductInfo ={title, brand, price, inStock, imageURL, category, description}
-      axios.patch(`http://localhost:4000/updateProduct/${id}`, UpdateProductInfo)
+      axios.patch(`https://tech-hub-server-five.vercel.app/updateProduct/${id}`, UpdateProductInfo)
       .then(res =>{
         if(res.data.modifiedCount > 0){
             Swal.fire({

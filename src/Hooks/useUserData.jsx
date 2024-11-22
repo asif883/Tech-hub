@@ -11,7 +11,7 @@ const useUserData = () => {
     
     useEffect(()=>{
         const fetchData =()=>{
-            axios.get(`http://localhost:4000/user/${user?.email}`)
+            axios.get(`https://tech-hub-server-five.vercel.app/user/${user?.email}`)
             .then(res =>{
                setUserData(res.data);
             })

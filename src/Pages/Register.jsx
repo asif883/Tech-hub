@@ -34,7 +34,7 @@ const Register = () => {
 
         CreateUser( email, password )
         .then( ()=>{
-            axios.post('http://localhost:4000/user', userInfo)
+            axios.post('https://tech-hub-server-five.vercel.app/user', userInfo)
             .then((res)=>{
                 console.log(res.data);
                 if(res.data.insertedId){

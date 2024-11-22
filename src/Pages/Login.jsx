@@ -59,7 +59,7 @@ const Login = () => {
                     email,
                     role : "buyer"
                   }
-                    axios.post('http://localhost:4000/user',userInfo)
+                    axios.post('https://tech-hub-server-five.vercel.app/user',userInfo)
                     .then((res)=>{
                         
                         navigate(location?.state ? location.state : '/'); 

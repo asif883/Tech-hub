@@ -23,7 +23,7 @@ const AllProduct = () => {
     useEffect(()=>{
         setLoading(true)
         const fetch =async()=>{
-            axios.get(`http://localhost:4000/all-products?title=${Search}&sort=${sort}&brand=${brand}&category=${category}`)
+            axios.get(`https://tech-hub-server-five.vercel.app/all-products?title=${Search}&sort=${sort}&brand=${brand}&category=${category}`)
             .then(res =>{
                 console.log(res.data);
                 setProduct(res.data.products)

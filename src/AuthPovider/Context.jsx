@@ -20,7 +20,7 @@ const Context = ({children}) => {
             setUser(currentUser)
         
         if(currentUser){
-            axios.post('http://localhost:4000/authentication',{email: currentUser?.email})
+            axios.post('https://tech-hub-server-five.vercel.app/authentication',{email: currentUser?.email})
             .then(data=>{
                 if(data.data){
                     localStorage.setItem('access-token', data?.data?.token)

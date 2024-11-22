@@ -11,7 +11,7 @@ const ProductDetails = () => {
     console.log(products);
 
     useEffect(()=>{
-        fetch('http://localhost:4000/all-products')
+        fetch('https://tech-hub-server-five.vercel.app/all-products')
         .then(res => res.json())
         .then(data => setProduct(data.products))
     },[])

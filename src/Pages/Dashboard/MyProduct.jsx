@@ -11,7 +11,7 @@ const MyProduct = () => {
     
     useEffect(()=>{
         const fetch = () =>{
-            axios.get(`http://localhost:4000/my-product/${user?.email}`)
+            axios.get(`https://tech-hub-server-five.vercel.app/my-product/${user?.email}`)
             .then(res =>{
                 setMyProduct(res.data);
             })
@@ -31,7 +31,7 @@ const MyProduct = () => {
       }).then((result) => {
      
         if(result.isConfirmed){
-            axios.delete(`http://localhost:4000/added-product/${id}`)
+            axios.delete(`https://tech-hub-server-five.vercel.app/added-product/${id}`)
             .then( res =>{
                 if(res.data.deletedCount > 0 ){
                     Swal.fire({

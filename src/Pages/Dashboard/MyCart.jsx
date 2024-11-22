@@ -10,7 +10,7 @@ const MyCart = () => {
 //    console.log(cartItems);
     useEffect(()=>{
         const fetch= () =>{
-            axios.get(`http://localhost:4000/cart/${user?.email}`)
+            axios.get(`https://tech-hub-server-five.vercel.app/cart/${user?.email}`)
             .then(res =>{
                 setCartItems(res.data);
             })

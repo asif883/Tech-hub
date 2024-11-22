@@ -21,7 +21,7 @@ const ProductCard = ({product}) => {
 
     console.log(CartInfo);
 
-    axios.post('http://localhost:4000/cart' , CartInfo)
+    axios.post('https://tech-hub-server-five.vercel.app/cart' , CartInfo)
     .then(res =>{
       
       if(res.data.insertedId){
@@ -44,7 +44,7 @@ const ProductCard = ({product}) => {
        buyerEmail, title, imageURL, price,
     }
 
-    axios.post('http://localhost:4000/wishList' , ListInfo)
+    axios.post('https://tech-hub-server-five.vercel.app/wishList' , ListInfo)
     .then(res =>{
       
       if(res.data.insertedId){

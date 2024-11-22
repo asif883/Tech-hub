@@ -10,7 +10,7 @@ const WishList = () => {
 
     useEffect(()=>{
         const fetch= () =>{
-            axios.get(`http://localhost:4000/list/${user?.email}`)
+            axios.get(`https://tech-hub-server-five.vercel.app/list/${user?.email}`)
             .then(res =>{
                 setListItems(res.data);
             })

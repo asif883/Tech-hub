@@ -19,7 +19,7 @@ const AllUser = () => {
           })
           .then((result) => {         
             if(result.isConfirmed){
-                axios.patch(`http://localhost:4000/users/admin/${user?._id}`)
+                axios.patch(`https://tech-hub-server-five.vercel.app/users/admin/${user?._id}`)
                 .then(res =>{
                     if(res.data.modifiedCount > 0){
                         Swal.fire({
@@ -50,7 +50,7 @@ const AllUser = () => {
           }).then((result) => {
          
             if(result.isConfirmed){
-                axios.delete(`http://localhost:4000/users/${user?._id}`)
+                axios.delete(`https://tech-hub-server-five.vercel.app/users/${user?._id}`)
                 .then( res =>{
                     if(res.data.deletedCount > 0 ){
                         Swal.fire({
@@ -72,7 +72,7 @@ const AllUser = () => {
  
 
     useEffect(()=>{
-        fetch('http://localhost:4000/users')
+        fetch('https://tech-hub-server-five.vercel.app/users')
         .then(res => res.json())
         .then(data => setUsers(data))
     },[])
