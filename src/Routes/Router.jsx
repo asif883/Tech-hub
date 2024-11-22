@@ -11,6 +11,9 @@ import AllUser from "../Pages/Dashboard/AllUser";
 import PrivateRoute from "./PrivateRoute";
 import AddProduct from "../Pages/Dashboard/AddProduct";
 import AllProduct from "../Pages/AllProducts";
+import ProductDetails from "../Pages/ProductDetails";
+import MyCart from "../Pages/Dashboard/MyCart";
+import WishList from "../Pages/Dashboard/WishList";
 
 export const router = createBrowserRouter([
     {
@@ -42,6 +45,11 @@ export const router = createBrowserRouter([
           path: '/product',
           element: <AllProduct/>
         }
+        ,
+        {
+          path: '/details/:id',
+          element:<ProductDetails></ProductDetails>, 
+        }
 
       ]
     },
@@ -61,6 +69,14 @@ export const router = createBrowserRouter([
           path: 'dashboard/add-product',
           element: <PrivateRoute><AddProduct/></PrivateRoute>
         },
+        {
+          path: 'dashboard/my-cart',
+          element:<PrivateRoute><MyCart/></PrivateRoute>
+        },
+        {
+          path: 'dashboard/my-wishList',
+          element:<PrivateRoute><WishList/></PrivateRoute>
+        }
         
       ]
     }

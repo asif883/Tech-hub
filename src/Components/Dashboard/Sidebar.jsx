@@ -9,6 +9,8 @@ import { CiLogout } from "react-icons/ci";
 import useUserData from '../../Hooks/useUserData';
 import { MdOutlineAddCircleOutline } from "react-icons/md";
 import { BiCollection } from "react-icons/bi";
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { FaRegHeart } from "react-icons/fa6";
 
 const AdminRoutes = [
     {
@@ -30,6 +32,20 @@ const SellerRoutes = [
        route: "dashboard/add-product" ,
        icon: <MdOutlineAddCircleOutline/>,
        name: 'Add Product'
+    }
+]
+const BuyerRoutes = [
+    {
+       id: 1,
+       route: "dashboard/my-cart" ,
+       icon: <MdOutlineShoppingCart/>,
+       name: 'My Cart'
+    },
+    {
+       id: 1,
+       route: "dashboard/my-wishList" ,
+       icon: <FaRegHeart/>,
+       name: 'My Wish List'
     }
 ]
 
@@ -82,7 +98,22 @@ const Sidebar = () => {
               }
                 </>
             }
+            {
+                role === "buyer" && 
+                <>
+              {
+                BuyerRoutes.map((r, idx)=>
+                    <Link to={`${r.route}`
+                    } key={idx} className='border-2 border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
+                        <>{r.icon}</>
+                        <>{r.name}</>
+                    </Link>   
+                )
+              }
+                </>
+            }
             
+           
             <Link to='/' className='border-2 border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
                  <IoHomeOutline/>
                 <>Home</>

@@ -12,8 +12,8 @@ const Home = () => {
         <div>
             <Banner/>
             <div className='container mx-auto'>
-                <FeaturedProduct/>
                 <Categories/>
+                <FeaturedProduct/>
                 <Faqs/>
                 <Contact/>
                 <Testimonials/>
