@@ -20,7 +20,7 @@ const Banner = () => {
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
-        className="h-[400px] lg:h-[650px]"
+        className="h-[400px] lg:h-[650px] z-10"
       >
             <SwiperSlide>
                 <img className='absolute object-cover w-full h-full' src={banner1} alt="" />

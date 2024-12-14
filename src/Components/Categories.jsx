@@ -22,7 +22,7 @@ const Categories = () => {
 
 
     return (
-        <div className="my-3 lg:my-20">
+        <div className="my-6 lg:my-20">
 
              <SectionTitle
                 heading='Shop By Category'
@@ -32,7 +32,7 @@ const Categories = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center">          
                {
                   categories?.map(( category , idx) =>
-                    <Link to='/product' key={idx} className="card w-72 mx-auto border border-orange-300 shadow-xl">
+                    <Link to='/product' key={idx} className="card w-64 mx-auto border border-orange-300 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title">
                             {

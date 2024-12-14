@@ -7,13 +7,13 @@ import { MdOutlineCall } from "react-icons/md";
 
 const Contact = () => {
     return (
-        <div className='mt-6 lg:mt-16 mb-6 lg:mb-32'>
+        <div className='mt-8 lg:mt-16 mb-6 lg:mb-32'>
             <SectionTitle 
             heading="Contact Our Friendly Team" 
             subHeading="Let us know how can we help you"
             />
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 justify-center items-center mt-3 lg:mt-8'>
-                 <div className="card w-80 border border-orange-300 shadow-xl">
+            <div className='flex flex-col md:flex-row gap-4 lg:gap-8 justify-center items-center mt-3 lg:mt-8'>
+                 <div className="card w-72 h-60 border border-orange-300 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title"><BiMessageRoundedDots size={32}/></h2>
                         
@@ -23,7 +23,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-                 <div className="card w-80 border border-orange-300 shadow-xl">
+                 <div className="card w-72 h-60 border border-orange-300 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title"><HiOutlineChatAlt2 size={32}/></h2>
                         
@@ -33,7 +33,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-                 <div className="card w-80 border border-orange-300 shadow-xl">
+                 <div className="card w-72 h-60 border border-orange-300 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title"><IoLocationOutline size={32}/></h2>
                         
@@ -43,7 +43,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-                 <div className="card w-80 border border-orange-300 shadow-xl">
+                 <div className="card w-72 h-60 border border-orange-300 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title"><MdOutlineCall size={32}/></h2>
                         
