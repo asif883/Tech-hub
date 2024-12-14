@@ -38,10 +38,10 @@ const NavEnd = () => {
                 : 
                 <div>
                 <Link to='/login'>
-                    <button className='border-2 border-[#FFA43A] rounded-xl mr-3 text-[#FFA43A] px-3 py-2 font-semibold'>Login</button>
+                    <button className='border-2 border-[#FFA43A] rounded-xl mr-1 md:mr-3 text-[#FFA43A] px-2 md:px-3 py-1 md:py-2  font-semibold'>Login</button>
                 </Link>
                 <Link to='/register'>
-                        <button className='border-2 border-[#FFA43A] rounded-xl mr-3 text-[#FFA43A] px-3 py-2 font-semibold'>Register</button>
+                        <button className='border-2 border-[#FFA43A] rounded-xl mr-0 md:mr-3 text-[#FFA43A] px-2 md:px-3 py-1 md:py-2 font-semibold'>Register</button>
                 </Link>
                 </div>
             }

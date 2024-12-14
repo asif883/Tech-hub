@@ -39,7 +39,7 @@ const Nav = () => {
                     </li>
                     </ul>
                     </div>
-                    <Link to='/' className="text-2xl font-semibold hover:text-orange-400">Tech<span className='text-orange-400'>-</span>Hub</Link>
+                    <Link to='/' className="text-xl md:text-2xl font-semibold hover:text-orange-400">Tech<span className='text-orange-400'>-</span>Hub</Link>
                 </div>
                 <div className="navbar-center hidden md:flex">
                     <ul className="menu-horizontal px-1 font-medium">
