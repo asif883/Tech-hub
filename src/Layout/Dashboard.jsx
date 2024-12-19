@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from '../Components/Dashboard/Sidebar';
 import { CiMenuFries } from "react-icons/ci";
+import useAuth from '../Hooks/useAuth';
+import Loading from '../Components/Loading';
+import DashLoader from '../Components/Dashboard/DashLoader';
 
 const Dashboard = () => {
+    const {user} = useAuth()
+    const [ loading , setLoading ] = useState(true)
+    useEffect(()=> {
+        fetch(`https://tech-hub-server-five.vercel.app/user/${user?.email}`)
+        .then(res => res.json())
+        .then(data => {
+            setLoading(false)
+        })
+    }, [])
     return (
-            <div className="drawer lg:drawer-open">
+            <div>
+                {
+                    loading ? <DashLoader/>
+                    :
+                    <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content p-8">
                     {/* Page content here */}
@@ -22,6 +38,8 @@ const Dashboard = () => {
                         <Sidebar/>
                     </ul>
                 </div>
+            </div>
+                }
             </div>
     );
 };

@@ -6,7 +6,7 @@ import axios from "axios";
 // import axios from "axios";
 
 const useUserData = () => {
-    const {user , loading} =useAuth()
+    const {user } =useAuth()
     const [userData , setUserData] = useState({})
     
     useEffect(()=>{
@@ -16,7 +16,7 @@ const useUserData = () => {
                setUserData(res.data);
             })
         }
-        fetchData()
+        fetchData()      
 },[]);
     return userData;
 }
