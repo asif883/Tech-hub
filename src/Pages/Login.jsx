@@ -1,5 +1,4 @@
 import React from 'react';
-import img from '../assets/Login-cuate.svg'
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
@@ -68,13 +67,11 @@ const Login = () => {
     }
     return (
         <div>
-            <div className="flex flex-col lg:flex-row items-center max-w-7xl mx-auto">
-        <div className="flex-1">
-          <img className="h-4/6 w-4/5" src={img} alt="" />
-      </div>  
-      <div className="max-w-md h-4/6 mt-16 shadow-xl rounded-lg flex-1">
+            <div className="max-w-7xl mx-auto">
+          
+      <div className="max-w-lg mx-auto  mt-10 bg-orange-50 rounded-lg md:px-3 py-8">
           <div className="text-center">
-              <h1 className="text-4xl text-[#FFA43A] font-bold">Login Now</h1>
+              <h1 className="text-2xl md:text-4xl text-gray-900 font-bold">Sing in to your account </h1>
           </div>
 
 
@@ -83,7 +80,7 @@ const Login = () => {
               <label className="label">
                   <span className="label-text text-xl font-semibold">Email</span>
               </label>
-              <input type="email" name="email" placeholder="email" className="input input-bordered border border-orange-300" {...register("email" ,{required: true})} />
+              <input type="email" name="email" placeholder="email" className="input bg-white" {...register("email" ,{required: true})} />
               {
                 errors.email && (
                     <p className='text-red-500 text-sm font-light'> Email is required</p>
@@ -99,7 +96,7 @@ const Login = () => {
                   <input
                         type="password"
                         placeholder="Enter your password"
-                        className= "input input-bordered border border-orange-300"
+                        className= "input bg-white"
                         {...register("password", {
                         required: "Password is required.",
                         minLength: {
@@ -124,17 +121,17 @@ const Login = () => {
                   </div>
              
               <div className="form-control mt-6">
-              <button type='submit' className="w-full border-2 mr-4  px-4  rounded-lg py-3 bg-[#FFA43A] text-white  font-semibold">Login</button>
+              <button type='submit' className="w-full border-2 mr-4  px-4  rounded-lg py-3 bg-gray-800 text-gray-200  font-semibold">Sing In</button>
               </div>
               
               <label className="label">
-                  <p className="label-text-alt text-lg ">New here? Please <Link to='/register' className="underline text-[#FFA43A] font-medium">Register</Link></p>
+                  <p className="label-text-alt text-sm md:text-lg ">New here? Please <Link to='/register' className="underline text-blue-500 font-medium">Sing up</Link></p>
               </label>
       </form>
       <div className="">
                     <h1 className="text-center font-semibold">Or, Login with</h1>
-                  <div className="text-center mt-6 pb-8">
-                      <button onClick={handleGoogleLogin} className="mr-3 border border-orange-300 p-1 rounded-xl">
+                  <div className="text-center mt-4">
+                      <button onClick={handleGoogleLogin} className="mr-3 border border-gray-300 p-1 rounded-xl">
                           <FcGoogle className="w-10 h-10" />
                       </button>
                   </div>
