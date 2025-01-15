@@ -15,34 +15,26 @@ const NavEnd = () => {
             {
                 user 
                 ? 
-                <div>
-                     <div className="dropdown dropdown-left dropdown-end">
-                        <div tabIndex={0} role="button" className="border-2 border-orange-200 rounded-full">
-                            {
-                                user?.photoURL 
+                <div className='flex items-center gap-1'>
+                   {
+                       user?.photoURL 
                                 ?
-                                <><img className='w-10 rounded-full p-1' src={user?.photoURL} alt={user?.email} /></> 
+                         <><img className='w-12 rounded-full p-1 border border-orange-100' src={user?.photoURL} alt={user?.email} /></> 
                                 : 
-                                <><img className='w-10 rounded-full p-1' src={img} alt={user?.email} /></>
-                            }
-                        </div>
-                         <ul tabIndex={0} className="dropdown-content menu  rounded-box z-[1] p-2 shadow">
-                       
-                        <li className='border rounded-xl border-orange-300 bg-orange-400 text-white'>
-                            <Link to='/dashboard/dashboard/overview'>Dashboard</Link>
-                            
-                        </li>
-                     </ul>
-                 </div>
+                         <><img className='w-12 rounded-full p-1 border border-orange-100' src={img} alt={user?.email} /></>
+                    }
+             
+                    <Link to='/dashboard/dashboard/overview' className='border rounded-xl border-orange-400 text-orange-400 p-2'>
+                            <p>Dashboard</p>
+                    </Link> 
+        
                 </div> 
                 : 
                 <div>
                 <Link to='/login'>
-                    <button className='border-2 border-[#FFA43A] rounded-xl mr-1 md:mr-3 text-[#FFA43A] px-2 md:px-3 py-1 md:py-2  font-semibold'>Login</button>
+                    <button className='border-2 border-[#FFA43A] rounded-xl mr-1 md:mr-3 text-white bg-orange-400 hover:bg-orange-600 px-2 md:px-3 py-1 md:py-2'>Get Started</button>
                 </Link>
-                <Link to='/register'>
-                        <button className='border-2 border-[#FFA43A] rounded-xl mr-0 md:mr-3 text-[#FFA43A] px-2 md:px-3 py-1 md:py-2 font-semibold'>Register</button>
-                </Link>
+                
                 </div>
             }
         </div>
