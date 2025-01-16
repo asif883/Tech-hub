@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import Sidebar from '../Components/Dashboard/Sidebar';
 import { CiMenuFries } from "react-icons/ci";
 import useAuth from '../Hooks/useAuth';
-import Loading from '../Components/Loading';
 import DashLoader from '../Components/Dashboard/DashLoader';
 
 const Dashboard = () => {

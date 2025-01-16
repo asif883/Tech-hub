@@ -9,6 +9,7 @@ import { MdOutlineSpatialAudio } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 import SectionTitle from "../SharedItems/SectionTitle";
+import { Zoom } from "react-awesome-reveal";
 
 
 const Categories = () => {
@@ -30,6 +31,7 @@ const Categories = () => {
              ></SectionTitle>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center">          
+               <Zoom>
                {
                   categories?.map(( category , idx) =>
                     <Link to='/product' key={idx} className="card w-64 mx-auto border border-orange-300 shadow-xl">
@@ -63,6 +65,7 @@ const Categories = () => {
                   </Link>
                 )
                }
+               </Zoom>
              
             </div>
         </div>

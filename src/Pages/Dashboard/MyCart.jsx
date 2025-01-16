@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import useAuth from '../../Hooks/useAuth';
+import DashLoader from '../../Components/Dashboard/DashLoader';
 
 const MyCart = () => {
     const {user} = useAuth()
    
-
+    const [ loading , setLoading] = useState(true)
     const [cartItems , setCartItems] = useState([])
 //    console.log(cartItems);
     useEffect(()=>{
         const fetch= () =>{
             axios.get(`https://tech-hub-server-five.vercel.app/cart/${user?.email}`)
             .then(res =>{
-                setCartItems(res.data);
+                setCartItems(res.data)
+                setLoading(false)
             })
         }
         fetch()
@@ -23,6 +25,10 @@ const MyCart = () => {
                 <h1 className="text-3xl font-bold text-orange-400">My Cart</h1>
             </div>
             {
+                loading ? <DashLoader/>
+                :
+                <>
+                  {
                 cartItems?.length > 0 ? 
                 <>
                 <div className='grid gap-5 grid-cols-1 lg:grid-cols-2'>
@@ -49,11 +55,13 @@ const MyCart = () => {
                    )
                }
               </div>
-            </>
+                </>
                  : 
                 <div className='text-center'>
                     <h1 className="text-2xl font-semibold text-red-500">No Product Add Yet</h1>
                 </div> 
+            }
+                </>
             }
       </div>
     );

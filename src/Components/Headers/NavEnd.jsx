@@ -6,7 +6,7 @@ import img from '../../assets/profile.webp'
 
 const NavEnd = () => {
 
-    const { user ,logout} = useAuth()
+    const { user } = useAuth()
 
     
 
@@ -24,7 +24,7 @@ const NavEnd = () => {
                          <><img className='w-12 rounded-full p-1 border border-orange-100' src={img} alt={user?.email} /></>
                     }
              
-                    <Link to='/dashboard/dashboard/overview' className='border rounded-xl border-orange-400 text-orange-400 p-2'>
+                    <Link to='/dashboard/dashboard/overview' className='border rounded-xl border-orange-600 text-orange-600 p-2'>
                             <p>Dashboard</p>
                     </Link> 
         
@@ -32,7 +32,8 @@ const NavEnd = () => {
                 : 
                 <div>
                 <Link to='/login'>
-                    <button className='border-2 border-[#FFA43A] rounded-xl mr-1 md:mr-3 text-white bg-orange-400 hover:bg-orange-600 px-2 md:px-3 py-1 md:py-2'>Get Started</button>
+                    <button className='
+                     rounded-xl mr-1 md:mr-3 text-white bg-orange-500 hover:bg-orange-600 px-2 md:px-4 py-1 md:py-2'>Get Started</button>
                 </Link>
                 
                 </div>

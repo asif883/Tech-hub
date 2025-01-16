@@ -3,9 +3,11 @@ import useAuth from '../../Hooks/useAuth';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import DashLoader from '../../Components/Dashboard/DashLoader';
 
 const MyProduct = () => {
     const {user} =useAuth()
+    const [loading , setLoading] = useState(true)
 
     const [myProducts, setMyProduct] = useState([])
     
@@ -13,7 +15,8 @@ const MyProduct = () => {
         const fetch = () =>{
             axios.get(`https://tech-hub-server-five.vercel.app/my-product/${user?.email}`)
             .then(res =>{
-                setMyProduct(res.data);
+                setMyProduct(res.data)
+                setLoading(false)
             })
         }
         fetch()
@@ -52,6 +55,10 @@ const MyProduct = () => {
                 <h1 className="text-3xl font-bold text-orange-400">My Product</h1>
             </div>
             {
+                loading ? <DashLoader/>
+                :
+                <>
+                  {
                 myProducts?.length > 0 ? 
                 <>
                 <div className='grid gap-5 grid-cols-1 lg:grid-cols-2'>
@@ -80,11 +87,13 @@ const MyProduct = () => {
                    )
                }
               </div>
-            </>
+                </>
                  : 
                 <div className='text-center'>
                     <h1 className="text-2xl font-semibold text-red-500">No Product Add Yet</h1>
                 </div> 
+            }
+                </>
             }
       </div>
     );

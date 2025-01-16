@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../Hooks/useAuth';
 import axios from 'axios';
+import DashLoader from '../../Components/Dashboard/DashLoader';
 
 const WishList = () => {
     const {user} = useAuth()
    
-
+    const [ loading , setLoading ] = useState(true)
     const [listItems , setListItems] = useState([])
 
     useEffect(()=>{
         const fetch= () =>{
             axios.get(`https://tech-hub-server-five.vercel.app/list/${user?.email}`)
             .then(res =>{
-                setListItems(res.data);
+                setListItems(res.data)
+                setLoading(false)
             })
         }
         fetch()
@@ -22,7 +24,11 @@ const WishList = () => {
             <div className='text-center my-8'>
                 <h1 className="text-3xl font-bold text-orange-400">Wish List</h1>
             </div>
-            {
+           {
+             loading ? <DashLoader/>
+             :
+             <>
+              {
                 listItems?.length > 0 ? 
                 <>
                 <div className='grid gap-5 grid-cols-1 lg:grid-cols-2'>
@@ -49,12 +55,14 @@ const WishList = () => {
                    )
                }
               </div>
-            </>
+                </>
                  : 
                 <div className='text-center'>
                     <h1 className="text-2xl font-semibold text-red-500">No Product Add Yet</h1>
                 </div> 
             }
+             </>
+           }
        </div>
     );
 };

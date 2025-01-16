@@ -11,15 +11,15 @@ const ProductCard = ({product}) => {
   const {role , email} = useUserData()
 
   const handleCart = (email)=>{
-    const buyerEmail = email
-    const title = product.title 
-    const imageURL = product.imageURL
-    const price = product.price
-    const CartInfo ={
-       buyerEmail, title, imageURL, price,
-    }
+      const buyerEmail = email
+      const title = product.title 
+      const imageURL = product.imageURL
+      const price = product.price
+      const CartInfo ={
+        buyerEmail, title, imageURL, price,
+      }
 
-    console.log(CartInfo);
+    // console.log(CartInfo);
 
     axios.post('https://tech-hub-server-five.vercel.app/cart' , CartInfo)
     .then(res =>{
