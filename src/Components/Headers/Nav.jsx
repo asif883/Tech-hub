@@ -5,7 +5,8 @@ import NavEnd from './NavEnd';
 
 const Nav = () => {
     return (
-        <div className="navbar container mx-auto ">
+        <div className='bg-orange-50'>
+              <div className="navbar container mx-auto py-3">
                 <div className="navbar-start">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
@@ -60,7 +61,8 @@ const Nav = () => {
                 <div className="navbar-end ">
                     <NavEnd></NavEnd>
                 </div>
-     </div>
+              </div>
+        </div>
     );
 };
 
