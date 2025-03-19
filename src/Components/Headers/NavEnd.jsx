@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useAuth from '../../Hooks/useAuth';
 import { FaCartPlus } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 
 const NavEnd = () => {
 
-    const { user } = useAuth()
+
 
     
 
