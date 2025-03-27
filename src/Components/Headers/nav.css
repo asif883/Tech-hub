@@ -1,6 +1,7 @@
 .active {
     position: relative;
     text-decoration: none;
+    color: #FF6600;
 }
 
 .active::after {

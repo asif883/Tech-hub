@@ -1,6 +1,6 @@
 
 .swiper-pagination-bullet {
-    background-color: #a9a9a9!important;
+    background-color: #f7ddbf!important;
     width: 8px;
     height: 8px;
     opacity: 1;
@@ -14,8 +14,7 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #e6e6e2 !important;
-  background-color: rgba(0, 0, 0, 0.5); 
+  color: #f7ddbf !important;
   padding: 20px;
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
