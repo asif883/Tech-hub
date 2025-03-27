@@ -27,7 +27,7 @@ const Categories = () => {
 
              <SectionTitle
                 heading='Shop By Category'
-                subHeading="200+  unique products"
+                subHeading="Discover the best tech products tailored for you! Browse through our wide range of gadgets and accessories"
              ></SectionTitle>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center">          
