@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './nav.css'
+import '../../Css/Font.css'
 import NavEnd from './NavEnd';
 
 const Nav = () => {
     return (
-        <div className='bg-orange-50'>
-              <div className="navbar container mx-auto py-3">
+        <div className='font-barlow shadow-sm'>
+              <div className="navbar container mx-auto py-5">
                 <div className="navbar-start">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
@@ -40,21 +41,24 @@ const Nav = () => {
                     </li>
                     </ul>
                     </div>
-                    <Link to='/' className="text-xl md:text-2xl font-semibold hover:text-orange-400">Tech<span className='text-orange-400'>-</span>Hub</Link>
+                    <Link to='/' className="text-xl md:text-3xl font-bold">Tech<span className=''>-</span>Hub</Link>
                 </div>
                 <div className="navbar-center hidden md:flex">
-                    <ul className="menu-horizontal px-1 font-medium">
-                     <li className='mr-5'>
+                    <ul className="menu-horizontal px-1 font-semibold text-lg">
+                     <li className='mr-7'>
                         <NavLink to='/'>Home</NavLink>
                     </li>
-                    <li className='mr-5'>
-                      <NavLink to='/product'>Product</NavLink>
+                    <li className='mr-7'>
+                      <NavLink to='/product'>Shop</NavLink>
                     </li>
-                    <li className='mr-5'>
+                    <li className='mr-7'>
                       <NavLink to='/contact'>Contact</NavLink>
                     </li>
-                    <li>
+                    <li className='mr-7'>
                         <NavLink to='/about'>About</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/blog'>Blog</NavLink>
                     </li>
                     </ul>
                 </div>

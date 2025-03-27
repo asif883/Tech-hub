@@ -22,7 +22,7 @@ const Main = () => {
                 <><Loading/></>
                 :
                 <>
-                 <div className='bg-orange-50'>
+                 <div>
                     <Nav></Nav>
                  </div>
                   <Outlet></Outlet>

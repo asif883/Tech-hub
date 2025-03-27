@@ -1,3 +1,20 @@
-.active{
-    color: #EA580C;
+.active {
+    position: relative;
+    text-decoration: none;
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: currentColor; 
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.active:hover::after {
+    width: 100%;
 }
