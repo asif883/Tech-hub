@@ -31,10 +31,10 @@ const Categories = () => {
              ></SectionTitle>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center">          
-               <Zoom>
+               <Zoom duration={1500}>
                {
                   categories?.map(( category , idx) =>
-                    <Link to='/product' key={idx} className="card w-64 mx-auto border border-orange-300 shadow-xl">
+                    <Link to='/product' key={idx} className="card w-64 mx-auto border border-orange-100 shadow-xl hover:shadow-2xl">
                     <div className="card-body">
                         <h2 className="card-title">
                             {
