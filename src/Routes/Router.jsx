@@ -18,6 +18,7 @@ import MyProduct from "../Pages/Dashboard/MyProduct";
 import UpdateProduct from "../Pages/Dashboard/UpdateProduct";
 import Blog from "../Pages/Blog";
 
+
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -54,7 +55,7 @@ export const router = createBrowserRouter([
           element:<ProductDetails></ProductDetails>, 
         },
         {
-          path: '/blog',
+          path:'/blog',
           element: <Blog/>
         }
 
