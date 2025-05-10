@@ -27,17 +27,20 @@ const Nav = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-black rounded-box z-50 mt-3 w-28 p-2 shadow bg-opacity-50 text-white">
-                        <li>
-                        <Link to='/'>Home</Link>
+                    <li className='mr-7'>
+                        <NavLink to='/'>Home</NavLink>
+                    </li>
+                    <li className='mr-7'>
+                      <NavLink to='/product'>Shop</NavLink>
+                    </li>
+                    <li className='mr-7'>
+                      <NavLink to='/contact'>Contact</NavLink>
+                    </li>
+                    <li className='mr-7'>
+                        <NavLink to='/about'>About</NavLink>
                     </li>
                     <li>
-                      <Link to='/product'>Product</Link>
-                    </li>
-                    <li>
-                      <Link to='/contact'>Contact</Link>
-                    </li>
-                    <li>
-                        <Link to='/about'>About</Link>
+                        <NavLink to='/blog'>Blog</NavLink>
                     </li>
                     </ul>
                     </div>

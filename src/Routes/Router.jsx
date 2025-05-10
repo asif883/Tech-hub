@@ -16,6 +16,7 @@ import MyCart from "../Pages/Dashboard/MyCart";
 import WishList from "../Pages/Dashboard/WishList";
 import MyProduct from "../Pages/Dashboard/MyProduct";
 import UpdateProduct from "../Pages/Dashboard/UpdateProduct";
+import Blog from "../Pages/Blog";
 
 export const router = createBrowserRouter([
     {
@@ -52,7 +53,10 @@ export const router = createBrowserRouter([
           path: '/details/:id',
           element:<ProductDetails></ProductDetails>, 
         },
-       
+        {
+          path: '/blog',
+          element: <Blog/>
+        }
 
       ]
     },
