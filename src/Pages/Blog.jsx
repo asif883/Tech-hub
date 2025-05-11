@@ -1,4 +1,6 @@
-import React from 'react';
+import { FaHeart } from "react-icons/fa6";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa6';
+import { IoIosArrowForward } from "react-icons/io";
 
 
 const blogData = [
@@ -9,7 +11,7 @@ const blogData = [
     likes: 125,
     category: "Tech News",
     description: "In 2025, we are seeing some groundbreaking innovations in AI, Quantum Computing, and the Internet of Things (IoT). This article explores the top trends shaping the future of technology...",
-    image: "https://via.placeholder.com/800x450?text=Blog+Image+1"
+    image: "https://i.ytimg.com/vi/RxGYVvTBpxE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAmdi5YGTKBb9jdTELKu6hPAJCQfQ"
   },
   {
     id: 2,
@@ -18,7 +20,7 @@ const blogData = [
     likes: 200,
     category: "Gadgets",
     description: "From foldable phones to wearable devices, these are the top gadgets that will change your daily life in 2025. Find out which products made the list!",
-    image: "https://via.placeholder.com/800x450?text=Blog+Image+2"
+    image: "https://miro.medium.com/v2/resize:fit:1400/1*uuDPiBybipbwsG4NfnUpmg.jpeg"
   },
   {
     id: 3,
@@ -27,7 +29,7 @@ const blogData = [
     likes: 150,
     category: "Telecommunications",
     description: "The rollout of 5G networks will revolutionize industries like healthcare, gaming, and transportation. But how will it impact your everyday life? Read on for insights...",
-    image: "https://via.placeholder.com/800x450?text=Blog+Image+3"
+    image: "https://unblogdedanza.com/wp-content/uploads/2024/01/22The-Impact-of-5G-Technology-A-Game-Changer22.jpeg"
   }
 ];
 
@@ -36,19 +38,19 @@ const popularArticles = [
     id: 1,
     title: "AI Innovations to Look Out for in 2025",
     date: "January 15, 2025",
-    image: "https://via.placeholder.com/100x80?text=AI"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs0YhhdmSQd9dnqzgIgfqWAmkCJ0vM7NPJkQ&s"
   },
   {
     id: 2,
     title: "The Rise of Autonomous Vehicles in 2025",
     date: "February 10, 2025",
-    image: "https://via.placeholder.com/100x80?text=Cars"
+    image: "https://eu-images.contentstack.com/v3/assets/blt31d6b0704ba96e9d/blt47587bc9d9836441/65817ee83018f3040a796399/GettyImages-971246808.jpg?width=1280&auto=webp&quality=95&format=jpg&disable=upscale"
   },
   {
     id: 3,
     title: "How Blockchain Will Shape the Future of Tech",
     date: "March 3, 2025",
-    image: "https://via.placeholder.com/100x80?text=Blockchain"
+    image: "http://mudrex.com/learn/wp-content/uploads/2024/11/FUTURE-OF-BLOCKCHAIN-jpg.webp"
   }
 ];
 
@@ -76,7 +78,7 @@ const Blog = () => {
                    {data.name}
                 </p>
                 <p className='flex items-center gap-2'>
-                  {data.likes}
+                 <FaHeart size={20}/> {data.likes}
                 </p>
                 <p className='flex items-center gap-2'>
                    {data.category}
@@ -91,11 +93,11 @@ const Blog = () => {
               <div className='mt-5 flex items-center'>
                 <p className='text-gray-900 text-base font-medium mr-3'>Share</p>
                 <div className='flex gap-3 text-gray-700'>
-                  {/* <a href="#"><FaFacebook size={20} /></a>
+                  <a href="#"><FaFacebook size={20} /></a>
                   <a href="#"><FaInstagram size={20} /></a>
                   <a href="#"><FaYoutube size={20} /></a>
                   <a href="#"><FaTwitter size={20} /></a>
-                  <a href="#"><FaLinkedin size={20} /></a> */}
+                  <a href="#"><FaLinkedin size={20} /></a>
                 </div>
               </div>
             </div>
@@ -109,7 +111,7 @@ const Blog = () => {
             {blogData.map((data) => (
               <li className='border-b border-gray-200 pb-2' key={data.id}>
                 <a href="#" className="hover:underline flex gap-2 items-center text-sm">
-                   {data.title}
+                  <IoIosArrowForward/> {data.title}
                 </a>
               </li>
             ))}
