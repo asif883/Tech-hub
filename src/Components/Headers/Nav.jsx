@@ -6,7 +6,7 @@ import NavEnd from './NavEnd';
 
 const Nav = () => {
     return (
-        <div className='font-barlow shadow-sm bg-orange-50'>
+        <div className='font-barlow shadow-sm bg-orange-50 text-gray-800'>
               <div className="navbar container mx-auto py-5">
                 <div className="navbar-start">
                     <div className="dropdown">

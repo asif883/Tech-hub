@@ -6,7 +6,7 @@ const Filter = ({setCategory, setBrand , newBrand, newCategory}) => {
         <div>
             <div className="dropdown dropdown-left dropdown-end">
                 <div tabIndex={0} role="button" className=""><p  className='p-3 border-2 w-48 rounded-md border-orange-300  text-orange-400 mb-6 flex gap-2 items-center justify-center'><FiFilter/> Filter </p></div>
-                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-6 shadow">
+                <ul tabIndex={0} className="dropdown-content menu rounded-box z-[1] w-52 p-6 shadow">
                 <div className='flex flex-col gap-2 items-center'>
             <select className="select w-40 border-2 border-orange-300" onChange={(e) => setCategory(e.target.value)}>   
 

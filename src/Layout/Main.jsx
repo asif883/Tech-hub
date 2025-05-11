@@ -4,6 +4,7 @@ import Nav from '../Components/Headers/Nav';
 import Footer from '../Components/Footer';
 import Loading from '../Components/Loading';
 import useAuth from '../Hooks/useAuth';
+import '../Css/theme.css'
 
 const Main = () => {
     const { isDarkMode } = useAuth()

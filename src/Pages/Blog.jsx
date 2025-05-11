@@ -73,7 +73,7 @@ const Blog = () => {
 
               <h1 className='mt-3 mb-2 text-xl md:text-3xl font-semibold'>{data.title}</h1>
               
-              <div className='flex flex-wrap gap-4 md:gap-6 font-medium text-gray-700 text-sm md:text-base'>
+              <div className='flex flex-wrap gap-4 md:gap-6 font-medium  text-sm md:text-base'>
                 <p className='flex items-center gap-2'>
                    {data.name}
                 </p>
@@ -85,14 +85,14 @@ const Blog = () => {
                 </p>
               </div>
 
-              <p className='text-gray-600 mt-3 border-b-2 border-dotted border-gray-900 pb-7'>
+              <p className=' mt-3 border-b-2 border-dotted border-gray-900 pb-7'>
                 {data.description.slice(0, 300)}...
                 <a href="#" className='text-blue-500 ml-1'>read more</a>
               </p>
 
               <div className='mt-5 flex items-center'>
-                <p className='text-gray-900 text-base font-medium mr-3'>Share</p>
-                <div className='flex gap-3 text-gray-700'>
+                <p className='text-base font-medium mr-3'>Share</p>
+                <div className='flex gap-3 '>
                   <a href="#"><FaFacebook size={20} /></a>
                   <a href="#"><FaInstagram size={20} /></a>
                   <a href="#"><FaYoutube size={20} /></a>
@@ -107,7 +107,7 @@ const Blog = () => {
         {/* Sidebar */}
         <div className='col-span-1 md:col-span-4'>
           <h2 className='text-xl md:text-2xl font-semibold uppercase'>Recent Articles</h2>
-          <ul className="space-y-3 mt-5 text-gray-600">
+          <ul className="space-y-3 mt-5 ">
             {blogData.map((data) => (
               <li className='border-b border-gray-200 pb-2' key={data.id}>
                 <a href="#" className="hover:underline flex gap-2 items-center text-sm">
@@ -123,7 +123,7 @@ const Blog = () => {
               <div className='mb-4 flex gap-3 items-center border-b border-gray-200 pb-2' key={blog.id}>
                 <img className='w-20 h-16 object-cover rounded-md' src={blog.image} alt="article" />
                 <div>
-                  <a href="#" className='text-gray-700 text-sm font-medium hover:text-blue-500'>{blog.title}</a>
+                  <a href="#" className=' text-sm font-medium hover:text-blue-500'>{blog.title}</a>
                   <p className='text-xs text-gray-500'>{blog.date}</p>
                 </div>
               </div>

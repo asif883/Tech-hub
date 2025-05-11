@@ -5,7 +5,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 const ContactPage = () => {
     return (
         <div>
-             <div className=" text-gray-800">
+          <div className="">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-orange-400">Contact Us</h1>
@@ -17,7 +17,7 @@ const ContactPage = () => {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Form */}
           <div>
-            <h2 className="text-2xl font-semibold text-gray-700">Send Us a Message</h2>
+            <h2 className="text-2xl font-semibold ">Send Us a Message</h2>
             <form className="mt-6 space-y-4">
               <div>
                 <label className="block text-sm font-medium" htmlFor="name">
@@ -63,7 +63,7 @@ const ContactPage = () => {
 
           {/* Contact Info */}
           <div className="flex flex-col justify-center">
-            <h2 className="text-2xl font-semibold text-gray-700">Our Contact Details</h2>
+            <h2 className="text-2xl font-semibold ">Our Contact Details</h2>
             <p className="mt-4">
               <strong>Email:</strong> support@tech-hub.com
             </p>
@@ -74,7 +74,7 @@ const ContactPage = () => {
               <strong>Address:</strong> 123 Tech Street, Innovation City, TX 75001
             </p>
 
-            <h2 className="text-2xl font-semibold text-gray-700 mt-8">Follow Us</h2>
+            <h2 className="text-2xl font-semibold mt-8">Follow Us</h2>
             <div className="flex space-x-4 mt-4">
               <a href="#" className="">
                 <FaFacebook size={24}></FaFacebook>
