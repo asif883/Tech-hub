@@ -14,7 +14,7 @@ const AboutPage = () => {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <img
-              src="https://thelearningrooms.com/wps/wp-content/uploads/2015/02/team.jpg"
+              src="https://www.naukri.com/blog/content/images/2018/04/0_JpkNa5g4_nXcwKiN.jpeg"
               alt="Tech-Hub Store"
               className="rounded-lg shadow-lg w-full"
             />
