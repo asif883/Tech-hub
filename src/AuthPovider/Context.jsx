@@ -14,7 +14,11 @@ const Context = ({children}) => {
     const [user, setUser] = useState (null);
     const [loading , setLoading] =useState(true)
 
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
+    const toggleDarkMode = () => {
+      return setIsDarkMode(prevMode => !prevMode);
+    };
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged( auth , currentUser=>{
             setUser(currentUser)
@@ -72,7 +76,9 @@ const Context = ({children}) => {
         CreateUser,
         login,
         logout,
-        googleLogin
+        googleLogin,
+        isDarkMode,
+        toggleDarkMode
     }
     return (
         <AuthContext.Provider value={authInfo}>
