@@ -9,7 +9,7 @@ import { IoCallSharp } from "react-icons/io5";
 const Footer = () => {
     return (
         <div className='bg-orange-50 mt-16'>
-            <div className='grid gap-5 grid-cols-1 lg:grid-cols-4 py-20  max-w-7xl mx-auto'>
+            <div className='grid gap-5 grid-cols-1 lg:grid-cols-4 py-20  max-w-7xl mx-auto px-3'>
                 <div>
                     <h1 className="text-4xl font-bold font-barlow">Tech-Hub</h1>
                     <p className='mt-7 text-gray-600'>Tech-Hub offers a user-friendly interface, secure authentication, advanced product search, seamless checkout, order tracking, an intuitive admin panel for product management, and a fast, responsive shopping experience.</p>
