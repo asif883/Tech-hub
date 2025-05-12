@@ -65,7 +65,7 @@ const NavEnd = () => {
               <div>
                 <ThemeController/>
               </div>
-                <Link to='/dashboard/dashboard/overview'>
+                <Link to='/dashboard/dashboard/profile'>
                     <button><FaRegCircleUser size={24} /></button>
                 </Link>
 

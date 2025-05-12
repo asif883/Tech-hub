@@ -1,7 +1,6 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import {  NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
-import { FaHome } from 'react-icons/fa';
+import { ImProfile } from "react-icons/im";
 import { GrOverview } from "react-icons/gr";
 import { PiUsersThreeBold } from "react-icons/pi";
 import { IoHomeOutline } from "react-icons/io5";
@@ -11,6 +10,7 @@ import { MdOutlineAddCircleOutline } from "react-icons/md";
 import { BiCollection } from "react-icons/bi";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa6";
+import '../../Css/DashBoard/dash.css'
 
 const AdminRoutes = [
     {
@@ -67,19 +67,19 @@ const Sidebar = () => {
             <div className='mb-4'>
                 <h1 className="text-3xl text-orange-400 font-bold">Tech-Hub</h1>
             </div>
-            <Link to='dashboard/overview' className='border-2  border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
+            <NavLink to='dashboard/overview' className='border-2  border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
                 <GrOverview/>
                 < >Overview</>
-            </Link>
+            </NavLink>
             {
                 role === "admin" && 
                 <>
               {
                 AdminRoutes.map((r, idx)=>
-                    <Link to={`${r.route}`} key={idx} className='border-2 border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
+                    <NavLink to={`${r.route}`} key={idx} className='border-2 border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
                         <>{r.icon}</>
                         <>{r.name}</>
-                    </Link>   
+                    </NavLink>   
                 )
               }
                 </>
@@ -89,11 +89,11 @@ const Sidebar = () => {
                 <>
               {
                 SellerRoutes.map((r, idx)=>
-                    <Link to={`${r.route}`
+                    <NavLink to={`${r.route}`
                     } key={idx} className='border-2 border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
                         <>{r.icon}</>
                         <>{r.name}</>
-                    </Link>   
+                    </NavLink>   
                 )
               }
                 </>
@@ -103,21 +103,24 @@ const Sidebar = () => {
                 <>
               {
                 BuyerRoutes.map((r, idx)=>
-                    <Link to={`${r.route}`
+                    <NavLink to={`${r.route}`
                     } key={idx} className='border-2 border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
                         <>{r.icon}</>
                         <>{r.name}</>
-                    </Link>   
+                    </NavLink>   
                 )
               }
                 </>
             }
             
-           
-            <Link to='/' className='border-2 border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
+            <NavLink to='dashboard/profile' className='border-2  border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
+                <ImProfile/>
+                < >Profile</>
+            </NavLink>
+            <NavLink to='/' className='border-2 border-orange-300 px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
                  <IoHomeOutline/>
                 <>Home</>
-            </Link>
+            </NavLink>
             <button onClick={handleLogout} className='border-2 border-orange-300 w-full px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center '>
                  <CiLogout/>
                  <>Logout</>

@@ -17,6 +17,7 @@ import WishList from "../Pages/Dashboard/WishList";
 import MyProduct from "../Pages/Dashboard/MyProduct";
 import UpdateProduct from "../Pages/Dashboard/UpdateProduct";
 import Blog from "../Pages/Blog";
+import Profile from "../Pages/Dashboard/Profile";
 
 
 export const router = createBrowserRouter([
@@ -88,6 +89,10 @@ export const router = createBrowserRouter([
         {
           path: 'dashboard/my-product',
           element:<PrivateRoute><MyProduct/></PrivateRoute>
+        },
+        {
+          path: 'dashboard/profile',
+          element:<PrivateRoute><Profile/></PrivateRoute>
         },
         {
           path:'/dashboard/updateProduct/:id',
