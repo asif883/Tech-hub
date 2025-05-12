@@ -1,9 +1,6 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-
 import { FcGoogle } from 'react-icons/fc';
-import { FaGithub } from 'react-icons/fa';
 import useAuth from '../Hooks/useAuth';
 import Swal from 'sweetalert2';
 import axios from 'axios';
