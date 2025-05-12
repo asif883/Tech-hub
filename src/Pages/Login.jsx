@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 
 const Login = () => {
-    const {googleLogin , login} = useAuth()
+    const {googleLogin , login, isDarkMode} = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
     
@@ -69,9 +69,9 @@ const Login = () => {
         <div>
             <div className="max-w-7xl mx-auto">
           
-      <div className="max-w-lg mx-auto  mt-10 bg-orange-50 rounded-lg md:px-3 py-8">
+      <div className={`max-w-lg mx-auto  mt-10  rounded-lg md:px-3 py-8 ${isDarkMode ? 'bg-gray-800': 'bg-orange-50'}`}>
           <div className="text-center">
-              <h1 className="text-2xl md:text-4xl text-gray-900 font-bold">Sing in to your account </h1>
+              <h1 className={`text-2xl md:text-4xl font-bold ${isDarkMode ? 'text-gray-300' : 'text-gray-900'}`}>Sing in to your account </h1>
           </div>
 
 
@@ -80,7 +80,7 @@ const Login = () => {
               <label className="label">
                   <span className="label-text text-xl font-semibold">Email</span>
               </label>
-              <input type="email" name="email" placeholder="email" className="input bg-white" {...register("email" ,{required: true})} />
+              <input type="email" name="email" placeholder="email" className={`input ${isDarkMode ? 'text-black' : 'bg-white'}`} {...register("email" ,{required: true})} />
               {
                 errors.email && (
                     <p className='text-red-500 text-sm font-light'> Email is required</p>
@@ -96,7 +96,7 @@ const Login = () => {
                   <input
                         type="password"
                         placeholder="Enter your password"
-                        className= "input bg-white"
+                        className= {`input ${isDarkMode ? 'text-black' : 'bg-white'}`}
                         {...register("password", {
                         required: "Password is required.",
                         minLength: {
@@ -125,7 +125,7 @@ const Login = () => {
               </div>
               
               <label className="label">
-                  <p className="label-text-alt text-sm md:text-lg ">New here? Please <Link to='/register' className="underline text-blue-500 font-medium">Sing up</Link></p>
+                  <p className={`label-text-alt text-sm md:text-lg ${isDarkMode? 'text-gray-200' : ' text-gray-800'}`}>New here? Please <Link to='/register' className="underline text-blue-500 font-medium">Sing up</Link></p>
               </label>
       </form>
       <div className="">

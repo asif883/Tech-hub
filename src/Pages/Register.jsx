@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 
 const Register = () => {
-    const { CreateUser } =useAuth()
+    const { CreateUser  , isDarkMode} =useAuth()
 
     const navigate = useNavigate()
 
@@ -60,8 +60,8 @@ const Register = () => {
     }
     return (
         <div className="max-w-7xl mx-auto">
-        <div className="max-w-xl mx-auto mt-10 bg-orange-50 rounded-lg md:px-3 py-8">
-            <h1 className="text-center text-2xl md:text-4xl text-gray-900 font-bold">Sing up to your account</h1>
+        <div className={`max-w-xl mx-auto mt-10 rounded-lg md:px-3 py-8 ${isDarkMode ? 'bg-gray-800': 'bg-orange-50'}`}>
+        <h1 className={`text-center text-2xl md:text-4xl ${isDarkMode ? 'text-gray-300' : 'text-gray-900'} font-bold`}>Sing up to your account</h1>
 
 
             <form onSubmit={handleSubmit(handleRegister)}  className="card-body">
@@ -70,7 +70,7 @@ const Register = () => {
                             <span className="label-text text-xl font-semibold">Name</span>
                         </label>
                             
-                        <input type="text" name="Name"  placeholder="Enter Your Name"className="input bg-white" {...register('name' ,{required: true})} />
+                        <input type="text" name="Name"  placeholder="Enter Your Name"className={`input ${isDarkMode ? 'text-black' : 'bg-white'}`} {...register('name' ,{required: true})} />
                         {
                             errors.name && ( 
                                 <p className='text-red-500 text-sm font-light'>Name is required</p>
@@ -83,7 +83,7 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Email</span>
                         </label>
-                        <input type="email" name='email' placeholder="email" className="input bg-white"{...register("email", {required: true})} />
+                        <input type="email" name='email' placeholder="email" className={`input ${isDarkMode ? 'text-black' : 'bg-white'}`}{...register("email", {required: true})} />
                         {
                           errors.email && ( 
                               <p className='text-red-500 text-sm font-light'>Email is required</p>
@@ -99,7 +99,7 @@ const Register = () => {
                     <input
                         type="password"
                         placeholder="Enter your password"
-                        className= "input bg-white"
+                        className= {`input ${isDarkMode ? 'text-black' : 'bg-white'}`}
                         {...register("password", {
                         required: "Password is required.",
                         minLength: {
@@ -127,7 +127,7 @@ const Register = () => {
                         <input type='password' 
                         name='confirm-password' 
                         placeholder="confirm-password" 
-                        className= "input bg-white" 
+                        className= {`input ${isDarkMode ? 'text-black' : 'bg-white'}`} 
                         {...register("confirmPassword", {
                             required: true ,
                             validate:(value)=>{
@@ -148,7 +148,7 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Role</span>
                         </label>
-                        <select className="select w-full input bg-white" 
+                        <select className={`select w-full input ${isDarkMode ? 'text-black' : 'bg-white'}`} 
                         {...register('role', {required: true})} 
                         >
                             <option value='buyer'>Buyer</option>
@@ -165,7 +165,7 @@ const Register = () => {
                     <button type='submit' className=" w-full border-2 mr-4  px-4  rounded-lg py-3 bg-gray-800 text-gray-200  font-semibold">Get Started</button>
                     </div>
                     <label className="label mt-4">
-                        <a className="label-text-alt text-sm md:text-lg ">Already have an account? Please <Link to='/login' className="underline text-blue-500 font-medium">Login</Link></a>
+                        <p className={`label-text-alt text-sm md:text-lg ${isDarkMode? 'text-gray-200' : ' text-gray-800'}`}>Already have an account? Please <Link to='/login' className="underline text-blue-500 font-medium">Login</Link></p>
                     </label>
              </form>
         
