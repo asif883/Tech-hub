@@ -14,9 +14,11 @@ import img4 from '../assets/b-2.png'
 import { FreeMode, Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
+import useAuth from '../Hooks/useAuth';
 
 const FeaturedProduct = () => {
-    return (
+    const { isDarkMode } = useAuth()
+    return ( 
         <div className='my-12 md:my-20 container mx-auto'>
             <SectionTitle
                 heading='The Best-Selling Products'
@@ -44,7 +46,7 @@ const FeaturedProduct = () => {
             modules={[FreeMode, Pagination]}
             className="mySwiper px-2 md:px-4 lg:px-6"
             >
-            <SwiperSlide className="rounded-lg border">
+            <SwiperSlide className={`rounded-lg border  ${isDarkMode ? 'border-gray-600' : 'border-gray-200'}`}>
                 <img src={img1} alt="Sonos Ace" className="w-full h-80 object-cover" />
                 <div className="py-4 text-center">
                 <p className="font-bold text-lg">Sonos Ace</p>
@@ -52,7 +54,7 @@ const FeaturedProduct = () => {
                 </div>
             </SwiperSlide>
 
-            <SwiperSlide className="rounded-lg border">
+            <SwiperSlide className={`rounded-lg border  ${isDarkMode ? 'border-gray-600' : 'border-gray-200'}`}>
                 <img src={img5} alt="iTel iS7" className="w-full h-80 object-cover" />
                 <div className="py-4 text-center">
                 <p className="font-bold text-lg">iTel iS7</p>
@@ -60,7 +62,7 @@ const FeaturedProduct = () => {
                 </div>
             </SwiperSlide>
 
-            <SwiperSlide className="rounded-lg border ">
+            <SwiperSlide className={`rounded-lg border  ${isDarkMode ? 'border-gray-600' : 'border-gray-200'}`}>
                 <img src={img3} alt="UG Green" className="w-full h-80 object-cover" />
                 <div className="py-4 text-center">
                 <p className="font-bold text-lg">UG Green</p>
@@ -68,7 +70,7 @@ const FeaturedProduct = () => {
                 </div>
             </SwiperSlide>
 
-            <SwiperSlide className="rounded-lg border ">
+            <SwiperSlide className={`rounded-lg border  ${isDarkMode ? 'border-gray-600' : 'border-gray-200'}`}>
                 <img src={img4} alt="Apple Watch" className="w-full h-80 object-cover" />
                 <div className="py-4 text-center">
                 <p className="font-bold text-lg">Apple Watch</p>
