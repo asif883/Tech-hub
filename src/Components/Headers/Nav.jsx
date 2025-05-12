@@ -3,10 +3,14 @@ import { Link, NavLink } from 'react-router-dom';
 import './nav.css'
 import '../../Css/Font.css'
 import NavEnd from './NavEnd';
+import useAuth from '../../Hooks/useAuth';
+
 
 const Nav = () => {
+ const { isDarkMode } = useAuth()
+
     return (
-        <div className='font-barlow shadow-sm bg-orange-50 text-gray-800'>
+        <div className={`font-barlow shadow-sm  ${isDarkMode ? 'bg-black' : "bg-orange-50" }`}>
               <div className="navbar container mx-auto py-5">
                 <div className="navbar-start">
                     <div className="dropdown">
