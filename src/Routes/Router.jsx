@@ -18,6 +18,7 @@ import MyProduct from "../Pages/Dashboard/MyProduct";
 import UpdateProduct from "../Pages/Dashboard/UpdateProduct";
 import Blog from "../Pages/Blog";
 import Profile from "../Pages/Dashboard/Profile";
+import Shop from "../Pages/Shop";
 
 
 export const router = createBrowserRouter([
@@ -48,7 +49,7 @@ export const router = createBrowserRouter([
         },
         {
           path: '/product',
-          element: <AllProduct/>
+          element: <Shop/>
         }
         ,
         {
