@@ -34,7 +34,7 @@ const Shop = () => {
             })
 
                 .then(res =>{
-                    console.log(res.data);
+                    // console.log(res.data);
                     setProduct(res.data.products)
                     setNewBrand(res.data.brands)
                     setNewCategory(res.data.categories)
