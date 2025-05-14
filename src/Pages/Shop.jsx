@@ -49,9 +49,9 @@ const Shop = () => {
     
     return (
         <div className="container mx-auto mt-10">
-             <div className="grid gap-5 grid-cols-4">
+             <div className="grid gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
                  {/* left side */}
-                    <div className="border min-h-screen p-5">
+                    <div className="border p-5">
                         <FilterProduct
                          setBrand={setBrand}
                          setCategory={setCategory}
@@ -60,22 +60,23 @@ const Shop = () => {
                         />
                     </div>
                 {/* right side */}
-                    <div className="col-span-3 border px-4 py-2">
+                    <div className="col-span-1 md:col-span-2 lg:col-span-3 border px-4 py-2">
                         <div className="px-5 py-6 bg-gray-50 flex items-center justify-between">
                             <p className="text-xl font-medium">Shop</p>
                             <Sort/>
                         </div>
 
-                        <div className="grid gap-3 grid-cols-1 md:grid-cols-2  pt-5">
+                        <div className="grid gap-3 grid-cols-1 lg:grid-cols-2  pt-5">
                             {
                                 products?.map((product) => <div className="border rounded p-1 hover:shadow-md" key={product?._id}>
                                     <div className="flex items-center gap-3">
-                                        <img className="object-cover w-48 h-40" src={product?.imageURL} alt="" />
+                                        <img className="object-cover w-32 md:w-48 h-32 md:h-40" src={product?.imageURL} alt="" />
                                         <div className="space-y-1 relative w-full">
-                                            <p className="text-lg font-semibold">{product?.title}</p>
-                                            <p className="font-semibold text-gray-600">Price: ${product?.price}</p>
-                                            <p className="font-medium text-gray-600">Brand: {product?.brand}</p>
-                                            <div className="flex items-center gap-5 mt-3 absolute -top-9 right-5">
+                                            <p className="text-sm md:text-lg font-semibold">{product?.title}</p>
+                                            <p className="text-xs md:text-base
+                                             font-semibold text-gray-600">Price: ${product?.price}</p>
+                                            <p className="text-xs md:text-base font-medium text-gray-600">Brand: {product?.brand}</p>
+                                            <div className="flex items-center gap-5 mt-3 absolute -top-8 right-5">
                                                 <MdOutlineShoppingCart/>
                                                 <FaRegHeart/>
                                             </div>

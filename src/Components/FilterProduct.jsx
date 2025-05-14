@@ -1,19 +1,21 @@
 import { useState } from "react";
+import useAuth from "../Hooks/useAuth";
 
 
 const FilterProduct = ({setCategory, setBrand , newBrand, newCategory}) => {
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedBrands, setSelectedBrands] = useState([]);
+    const { isDarkMode } = useAuth()
     return (
-        <div className="">
-          <fieldset className="fieldset p-2 w-48">
+        <div className="grid grid-cols-2 md:grid-cols-1">
+          <fieldset className="fieldset p-2 w-40 md:w-48">
                 <legend className="fieldset-legend font-semibold">Brand</legend>
                 {
                     newBrand?.map((brand) =>  
                     <label key={brand} className="label flex gap-5 justify-start">
                         <input
                         type="checkbox"
-                        className="checkbox" 
+                        className={`checkbox ${isDarkMode? 'border-gray-400' : 'border-gray-700'}`} 
                         value={brand}
                         checked={selectedBrands.includes(brand)}
                         onChange={(e) => {
@@ -29,7 +31,7 @@ const FilterProduct = ({setCategory, setBrand , newBrand, newCategory}) => {
                     </label>
                 )}
           </fieldset>
-          <fieldset className="fieldset p-2 w-48">
+          <fieldset className="fieldset p-2 w-40 md:w-48">
                 <legend className="fieldset-legend font-semibold">Category</legend>
                 {
                     newCategory?.map((category) =>  
@@ -37,7 +39,7 @@ const FilterProduct = ({setCategory, setBrand , newBrand, newCategory}) => {
                         <input 
                         type="checkbox"
                         value={category}  
-                        className="checkbox" 
+                        className={`checkbox ${isDarkMode? 'border-gray-400' : 'border-gray-700'}`} 
                         checked={selectedCategories.includes(category)}
                         onChange={(e) => {
                         const value = e.target.value;
