@@ -5,7 +5,7 @@ import { Slide } from 'react-awesome-reveal';
 
 const Faqs = () => {
     return (
-        <div className='mt-16 container mx-auto'>
+        <div className='my-16 container mx-auto'>
             <SectionTitle heading="Frequently Asked Questions" subHeading="There are the most Commonly asked Questions about us. Can't find what you are looking for?"/>
 
             <div className='flex flex-col lg:flex-row items-center gap-4'>

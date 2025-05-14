@@ -44,7 +44,7 @@ const reviews = [
 
 const Testimonials = () => {
     return (
-        <div className="mt-8 lg:mt-16">
+        <div className="mt-16 lg:mt-28">
             <SectionTitle heading='Testimonials' subHeading='What our client says'/>
 
             <div className="max-w-4xl lg:max-w-6xl mx-auto">

@@ -19,7 +19,7 @@ import useAuth from '../Hooks/useAuth';
 const FeaturedProduct = () => {
     const { isDarkMode } = useAuth()
     return ( 
-        <div className='my-12 md:my-20 container mx-auto'>
+        <div className='my-20 md:my-32 container mx-auto'>
             <SectionTitle
                 heading='The Best-Selling Products'
                 subHeading='Designed For Seamless Sound and Advanced Technology'

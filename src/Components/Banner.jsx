@@ -58,7 +58,7 @@ const Banner = () => {
            animate={{ opacity: 1, x: 10 }}
            exit={{ opacity: 0, x: -50 }}
            transition={{ duration: 1, ease: "easeOut" }}
-          className="flex flex-col-reverse lg:flex-row-reverse items-center justify-center h-full px-0 lg:px-12">
+          className="flex flex-col-reverse md:flex-row-reverse items-center justify-center h-full px-0 md:px-12">
 
             <motion.div
                key={activeIndex}
@@ -68,7 +68,7 @@ const Banner = () => {
                transition={{ duration: 1, ease: "easeOut" }}
               className="flex flex-col items-center text-center text-white w-1/2"
             >
-              <h1 className="text-xl lg:text-4xl font-semibold font-barlow">{slide.title}</h1>
+              <h1 className="text-xl md:text-2xl lg:text-4xl font-semibold font-barlow">{slide.title}</h1>
               <p className="mt-1 lg:mt-4 text-gray-200 text-sm lg:text-lg lg:max-w-xl">{slide.description}</p>
               <button className="mt-3 lg:mt-6 px-3 lg:px-6 py-1 lg:py-2 bg-[#FF6600] hover:bg-orange-600 rounded text-white">
                 Shop Now

@@ -23,7 +23,7 @@ const Categories = () => {
 
 
     return (
-        <div className="my-6 lg:my-20">
+        <div className="my-12 lg:my-32 ">
 
              <SectionTitle
                 heading='Shop By Category'
