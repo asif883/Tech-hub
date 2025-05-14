@@ -7,6 +7,8 @@ import { FaCartPlus } from "react-icons/fa6";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import useAuth from "../Hooks/useAuth";
+import Loading from "../Components/Loading";
+import { div } from "framer-motion/client";
 
 
 const Shop = () => {
@@ -67,26 +69,42 @@ const Shop = () => {
                             <Sort setSort={setSort}/>
                         </div>
 
-                        <div className="grid gap-3 grid-cols-1 lg:grid-cols-2  pt-5">
-                            {
-                                products?.map((product) => <div className={`border rounded p-1 hover:shadow-md
-                                ${isDarkMode ? 'border-gray-600' : 'border-gray-200'}`} key={product?._id}>
-                                    <div className="flex items-center gap-3">
-                                        <img className="object-cover w-32 md:w-48 h-32 md:h-40" src={product?.imageURL} alt="" />
-                                        <div className="space-y-1 relative w-full">
-                                            <p className="text-sm md:text-lg font-semibold">{product?.title}</p>
-                                            <p className="text-xs md:text-base
-                                             font-semibold text-gray-600">Price: ${product?.price}</p>
-                                            <p className="text-xs md:text-base font-medium text-gray-600">Brand: {product?.brand}</p>
-                                            <div className="flex items-center gap-5 mt-3 absolute -top-8 right-5">
-                                                <MdOutlineShoppingCart/>
-                                                <FaRegHeart/>
+                        {
+                            loading 
+                            ? 
+                            (<Loading/>)
+                            :
+                            (<>
+                              {
+                                products?.length === 0 
+                                ? 
+                                <div>
+                                    <h1 className="text-2xl text-red-500 font-bold text-center min-h-screen flex items-center justify-center">No product found</h1>
+                                </div>
+                                :
+                                <div className="grid gap-3 grid-cols-1 lg:grid-cols-2  pt-5">
+                                {
+                                    products?.map((product) => <div className={`border rounded p-1 hover:shadow-md
+                                    ${isDarkMode ? 'border-gray-600' : 'border-gray-200'}`} key={product?._id}>
+                                        <div className="flex items-center gap-3">
+                                            <img className="object-cover w-32 md:w-48 h-32 md:h-40" src={product?.imageURL} alt="" />
+                                            <div className="space-y-1 relative w-full">
+                                                <p className="text-sm md:text-lg font-semibold">{product?.title}</p>
+                                                <p className="text-xs md:text-base
+                                                font-semibold text-gray-600">Price: ${product?.price}</p>
+                                                <p className="text-xs md:text-base font-medium text-gray-600">Brand: {product?.brand}</p>
+                                                <div className="flex items-center gap-5 mt-3 absolute -top-8 right-5">
+                                                    <MdOutlineShoppingCart/>
+                                                    <FaRegHeart/>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>)
-                            }
-                        </div>
+                                    </div>)
+                                }
+                             </div>
+                              }
+                            </>)
+                        }
                     </div>
              </div>
         </div>
