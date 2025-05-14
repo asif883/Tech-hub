@@ -63,8 +63,8 @@ const Shop = () => {
                 {/* right side */}
                     <div className={`col-span-1 md:col-span-2 lg:col-span-3 border px-4 py-2 ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
                         <div className={`px-5 py-6  flex items-center justify-between ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
-                            <p className="text-xl font-medium">Shop</p>
-                            <Sort/>
+                            <p className="text-xl font-medium">Product Gallery</p>
+                            <Sort setSort={setSort}/>
                         </div>
 
                         <div className="grid gap-3 grid-cols-1 lg:grid-cols-2  pt-5">
