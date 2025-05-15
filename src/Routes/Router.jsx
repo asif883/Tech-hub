@@ -19,6 +19,9 @@ import UpdateProduct from "../Pages/Dashboard/UpdateProduct";
 import Blog from "../Pages/Blog";
 import Profile from "../Pages/Dashboard/Profile";
 import Shop from "../Pages/Shop";
+import LoginPage from "../Pages/LoginPage";
+import RegistrationPage from "../Layout/RegistrationPage";
+import SingIn from "../Layout/SingIn";
 
 
 export const router = createBrowserRouter([
@@ -30,10 +33,6 @@ export const router = createBrowserRouter([
             path: '/',
             element: <Home></Home>
         },
-        {
-            path: '/login',
-            element: <Login></Login>
-        }
         ,
         {
           path:'/contact',
@@ -42,10 +41,6 @@ export const router = createBrowserRouter([
         {
           path:'/about',
           element:<AboutPage/>
-        },
-        {
-          path: '/register',
-          element: <Register/>
         },
         {
           path: '/product',
@@ -101,5 +96,13 @@ export const router = createBrowserRouter([
         }
         
       ]
-    }
+    },
+    {
+      path: '/register',
+      element: <RegistrationPage/>
+    },
+    {
+      path: '/login',
+      element: <SingIn/>
+    },
   ]);

@@ -51,6 +51,7 @@ const ProductCard = ({product}) => {
     .then(res =>{
       
       if(res.data.insertedId){
+        setCartItems(prev => [...prev, CartInfo]);
         Swal.fire({
             title: 'Success!',
             text: 'Product added to Your cart',
@@ -99,6 +100,7 @@ const ProductCard = ({product}) => {
     .then(res =>{
       
       if(res.data.insertedId){
+        setListItems(prev => [...prev, ListInfo]);
         Swal.fire({
             title: 'Success!',
             text: 'Product added to Your Wish List',
