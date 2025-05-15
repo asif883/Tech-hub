@@ -1,16 +1,13 @@
 import Main from "../Layout/Main";
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../Pages/Home";
-import Login from "../Pages/Login";
 import ContactPage from "../Pages/ContactPage";
 import AboutPage from "../Pages/AnoutPage";
-import Register from "../Pages/Register";
 import Dashboard from "../Layout/Dashboard";
 import Overview from "../Pages/Dashboard/Overview";
 import AllUser from "../Pages/Dashboard/AllUser";
 import PrivateRoute from "./PrivateRoute";
 import AddProduct from "../Pages/Dashboard/AddProduct";
-import AllProduct from "../Pages/AllProducts";
 import ProductDetails from "../Pages/ProductDetails";
 import MyCart from "../Pages/Dashboard/MyCart";
 import WishList from "../Pages/Dashboard/WishList";
@@ -19,7 +16,6 @@ import UpdateProduct from "../Pages/Dashboard/UpdateProduct";
 import Blog from "../Pages/Blog";
 import Profile from "../Pages/Dashboard/Profile";
 import Shop from "../Pages/Shop";
-import LoginPage from "../Pages/LoginPage";
 import RegistrationPage from "../Layout/RegistrationPage";
 import SingIn from "../Layout/SingIn";
 
