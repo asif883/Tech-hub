@@ -53,7 +53,7 @@ const ProductCard = ({product}) => {
       if(res.data.insertedId){
         Swal.fire({
             title: 'Success!',
-            text: 'Product added to the cart',
+            text: 'Product added to Your cart',
             icon: 'success',
             confirmButtonText: 'Ok',
             confirmButtonColor: '#fb923c'
@@ -62,7 +62,23 @@ const ProductCard = ({product}) => {
     })
   }
 
+    const [listItems , setListItems] = useState([])
+
+    useEffect(()=>{
+        const fetch= () =>{
+            axios.get(`https://tech-hub-server-five.vercel.app/list/${user?.email}`)
+            .then(res =>{
+                setListItems(res.data)
+                setLoading(false)
+            })
+        }
+        fetch()
+    },[])
+
   const handleWishList = (email) =>{
+     if(!user){
+        return navigate('/login')
+      }
     const buyerEmail = email
     const title = product.title 
     const imageURL = product.imageURL
@@ -70,19 +86,27 @@ const ProductCard = ({product}) => {
     const ListInfo ={
        buyerEmail, title, imageURL, price,
     }
-    console.log(ListInfo);
-    // axios.post('https://tech-hub-server-five.vercel.app/wishList' , ListInfo)
-    // .then(res =>{
+    const isAlreadyAdded = listItems.some(item => item.title === product.title);
+      if (isAlreadyAdded) {
+        return Swal.fire({
+              title: "Check Your Wish List!!!",
+              text: "The Product Already Added To Your Wish List",
+              icon: "question",
+              confirmButtonColor: '#fb923c'
+              });
+      }
+    axios.post('https://tech-hub-server-five.vercel.app/wishList' , ListInfo)
+    .then(res =>{
       
-    //   if(res.data.insertedId){
-    //     Swal.fire({
-    //         title: 'Success!',
-    //         text: 'Product added to the Wish List',
-    //         icon: 'success',
-    //         confirmButtonText: 'Ok'
-    //       }); 
-    // }
-    // })
+      if(res.data.insertedId){
+        Swal.fire({
+            title: 'Success!',
+            text: 'Product added to Your Wish List',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+          }); 
+    }
+    })
   }
 
     return (
@@ -97,14 +121,20 @@ const ProductCard = ({product}) => {
                             <p className="text-sm md:text-lg font-semibold">{product?.title}</p>
                             <p className={`text-xs md:text-base font-semibold  ${isDarkMode ? 'text-gray-300': 'text-gray-600'}`}>Price: ${product?.price}</p>
                               <p className={`text-xs md:text-base font-medium  ${isDarkMode ? 'text-gray-300': 'text-gray-600'}`}>Brand: {product?.brand}</p>
-                              <div className="flex items-center gap-4  absolute -top-8 right-5">
-                                   <button onClick={()=> handleCart(email)}>
-                                        <MdOutlineShoppingCart size={20}/>
-                                   </button>                         
-                                   <button onClick={() => handleWishList(email)}>
-                                      <FaRegHeart size={20}/>
-                                   </button>
-                              </div>
+                               {
+                                  role !== 'admin' && role !== 'seller'
+                                  ? 
+                                  <><div className="flex items-center gap-4  absolute -top-8 right-5">
+                                    <button onClick={()=> handleCart(email)}>
+                                          <MdOutlineShoppingCart size={20}/>
+                                    </button>                         
+                                    <button onClick={() => handleWishList(email)}>
+                                        <FaRegHeart size={20}/>
+                                    </button>
+                                  </div></>
+                                  :
+                                  <></>
+                               }
                         </div>
                   </div>
               </div>
