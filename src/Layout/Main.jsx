@@ -25,11 +25,11 @@ const Main = () => {
                 <><Loading/></>
                 :
                 <>
-                 <div>
-                    <Nav></Nav>
+                <Nav></Nav>
+                 <div className='min-h-screen'>
+                      <Outlet></Outlet>
                  </div>
-                  <Outlet></Outlet>
-                  <Footer></Footer>
+                <Footer></Footer>
                 </>
             }
         </div>
